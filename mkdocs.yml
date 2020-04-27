@@ -1,0 +1,27 @@
+site_name: MkLorum
+# nav:
+#     - Home: index.md
+#     - About: about.md
+theme: readthedocs
+
+# nav:
+#     - Home: 'index.md'
+#     - User Guide:
+#         - 'Writing your docs': 'writing-your-docs.md'
+#         - 'Styling your docs': 'styling-your-docs.md'
+#     - About:
+#         - 'License': 'license.md'
+#         - 'Release Notes': 'release-notes.md'
+
+nav:
+    - Home: index.md
+    - about.md
+    - test.md
+    - sub:
+        - test 1: sub/1-test.md
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+        baselevel: 2
+        separator: "_"
