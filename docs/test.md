@@ -1,6 +1,7 @@
 ---
 title: にゃんこぺーじ
 author: human01
+date: 2020-0428
 ---
 
 
