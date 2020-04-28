@@ -1,18 +1,21 @@
 ---
 title: にゃんこぺーじ
-authors: human01
+author: human01
 ---
 
 
-# hello, test
+# H1: hello, test
 
 [TOC]
 
 aaa
 
-{{ page.title }}
 
 ## h2
+
+<ul>
+  <li>んなああ</li>
+</ul>
 
 うううう
 うううう
@@ -21,7 +24,19 @@ aaa
 
 ## こんちゃ
 
+数式
+
+$$ F = m \frac{dv}{dt} $$
+
+いいですね $x_\mu x^\mu$ これも。
+
+Lorem ipsum dolor sit amet: $p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+
 ### h3
+
+* :material-account-circle: – we can use Material Design icons
+* :fontawesome-regular-laugh-wink: – we can also use FontAwesome icons
+* :octicons-octoface: – that's not all, we can also use GitHub's Octicons
 
 ああ
 
@@ -38,8 +53,23 @@ aaa
 print 'にゃんこ\n';
 ```
 
+```bash
+for i in *
+do
+  sed "s/axe/sword/"
+done
+```
+
 #### にほんご うんこ
 
 ぴゃおーん
 
 えええーーーーん＞＞＞
+
+```python
+import matplotlib.pyplot as plt
+```
+
+```python
+plt.plot([1, 2])
+```
