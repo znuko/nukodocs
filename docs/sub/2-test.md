@@ -1,3 +1,7 @@
+---
+source: ../js/math.js
+---
+
 # second
 
 ## aa
@@ -11,3 +15,12 @@
 ## うへは
 
 なああ
+
+$$
+\newcommand\RR{\mathbf R}
+$$
+
+$$
+\RR = 12 \\
+\bold{aa} = \aa
+$$

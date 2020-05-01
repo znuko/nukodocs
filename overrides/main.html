@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      jax: ["input/TeX", "output/HTML-CSS"],
+      TeX: {
+        TagSide: "left",
+        Macros: {
+          RR: '{\\bf R}',
+          bold: ['{\\bf #1}',1],
+          unko: '💩<\\mathrm{happy!!}'
+        }
+      }
+    });
+  </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+  {{ super() }}
+{% endblock %}

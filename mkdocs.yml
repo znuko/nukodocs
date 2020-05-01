@@ -1,55 +1,87 @@
-site_name: MkLorum
-# nav:
-#     - Home: index.md
-#     - About: about.md
-# theme: readthedocs
 
-# nav:
-#     - Home: 'index.md'
-#     - User Guide:
-#         - 'Writing your docs': 'writing-your-docs.md'
-#         - 'Styling your docs': 'styling-your-docs.md'
-#     - About:
-#         - 'License': 'license.md'
-#         - 'Release Notes': 'release-notes.md'
 
-nav:
-    - Home: index.md
-    - about.md
-    - test.md
-    - sub:
-        - test 11: sub/1-test.md
-        - test 2: sub/2-test.md
-        - test 3: sub/3-test.md
-        - subsub:
-            - test 3: sub/subsub/3-test.md
-            - test 4: sub/subsub/4-test.md
-            - sub/subsub/5-test.md
+## Project information
+site_name: nukoDocs
+site_description: Documents for nukoyama
+site_author: nukoyama
+site_url: https://nukoyama.github.io/mkdocs-test/
 
-# markdown_extensions:
-#     - toc:
-#         permalink: "#"
-#         baselevel: 2
-#         separator: "_"
+## Repository
+repo_name: nukoyama/mkdocs-test
+repo_url: https://github.com/nukoyama/mkdocs-test
 
+## Copyright
+copyright: Copyright &copy; 2020 nukoyama
+
+# Google Analytics
+google_analytics:
+  - UA-165061642-1
+  - auto
 
 # theme: ivory
 # theme: readthedocs
 # theme: mkdocs
 # theme: rtd-dropdown
-theme: material
+# theme: material
 
-# plugins:
-#   - pheasant
+theme:
+  name: material
+  custom_dir: overrides
+  language: ja
+  features:
+    - instant # よくわからん
+    - tabs
+  palette:
+    primary: teal # default: indigo
+    accent: teal
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
+  icon:
+    logo: material/library
+    repo: fontawesome/brands/git-alt
+  # logo: images/logo.svg
+  # favicon: images/favicon.png
 
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+nav:
+  - Home: index.md
+  - about.md
+  - test.md
+  - sub:
+    - test 11: sub/1-test.md
+    - test 2: sub/2-test.md
+    - test 3: sub/3-test.md
+    - subsub:
+      - test 3: sub/subsub/3-test.md
+      - test 4: sub/subsub/4-test.md
+      - sub/subsub/5-test.md
+  - MkDocs:
+    - mkdocs/link.md
+    - mkdocs/cheet-sheat.md
+    - mkdocs/memo.md
+    - mkdocs/custome-css.md
+
+
+# Extras
+extra:
+  social:
+    - icon: fontawesome/brands/github # or github-alt
+      link: https://github.com/nukoyama
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/geniusium_
+    # - icon: fontawesome/brands/linkedin
+    #   link: https://linkedin.com/in/squidfunk
+  # disqus: mkdocs-test-1
+  disqus: # disabled by empty value
 
 markdown_extensions:
+  ## table of comtents
   - toc:
-        permalink: "#"
-        baselevel: 2
-        separator: "_"
+      permalink: "#" # any string
+      baselevel: 2
+      separator: "_"
+  ## pymdownx
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -62,10 +94,32 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
-  - pymdownx.smartsymbols
+  - pymdownx.smartsymbols:
+      fractions: false #? does not work
+      ordinal_numbers: false
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tabbed
   - pymdownx.tilde
+  - pymdownx.keys
+  ## Material
   - admonition # block-styled
+  - footnotes
+  - codehilite
+  - meta
+  ## MkDocs+
+  - fontawesome_markdown # Font Awesome
+  ## others
+  - def_list # 定義リスト
+  - mdx_truly_sane_lists # tab spaces: 4 (default) to 2
+
+
+extra_css:
+  # - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+  - "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  - css/header-awesome.css
+
+extra_javascript:
+  ## mathjax の config は /overrides/main.html に直接記述。
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
