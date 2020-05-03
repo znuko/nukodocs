@@ -1,20 +1,49 @@
 {% extends "base.html" %}
 
+{%- block htmltitle %}
+  {#
+    <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  #}
+
+  <title>
+    {% if page and page.title and not page.is_homepage %}
+      {{ page.title }}
+      {% if page.parent %} - {% endif %}
+      {% if page.parent.parent %}
+        {{ page.parent.parent.title }}
+      {% elif page.parent %}
+        {{ page.parent.title }}
+      {% endif %}
+      |
+    {% endif %}
+    {{ config.site_name }}
+  </title>
+
+{%- endblock %}
+
 {% block scripts %}
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      showProcessingMessages: false,
-      jax: ["input/TeX", "output/HTML-CSS"],
-      TeX: {
-        TagSide: "left",
-        Macros: {
-          RR: '{\\bf R}',
-          bold: ['{\\bf #1}',1],
-          unko: '💩<\\mathrm{happy!!}'
-        }
-      }
-    });
-  </script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+  {#
+    `super()`:
+      親（base.html）の script block の内容を呼び出す
+  #}
   {{ super() }}
+
+  {# for mathjax v2 #}
+  {#
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        jax: ["input/TeX", "output/HTML-CSS"],
+        TeX: {
+          TagSide: "left",
+          Macros: {
+            RR: '{\\bf R}',
+            bold: ['{\\bf #1}',1],
+            unko: 'ðŸ’©<\\mathrm{happy!!}'
+          }
+        }
+      });
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+  #}
 {% endblock %}

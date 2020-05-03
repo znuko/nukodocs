@@ -1,5 +1,5 @@
 ---
-title: Custome CSS
+title: Customize CSS
 ---
 
 ## 一般論

@@ -43,7 +43,16 @@
     content:"\f0da" !important;
 }
 
-.md-typeset a:not([class])::before {
+/* オリジナル */
+/* .md-typeset a:not([class])::before {
+    font-family: "FontAwesome";
+    margin-right: .2em;
+    content: "\f14c";
+} */
+
+/* footerのリンクにはawesomeを表示しないように、
+contentの部分だけにstyleを指定 */
+.md-content .md-typeset a:not([class])::before {
     font-family: "FontAwesome";
     margin-right: .2em;
     content: "\f14c";
