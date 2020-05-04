@@ -48,7 +48,7 @@ theme:
 
 nav:
   - Home: index.md
-  - about.md
+  - develop.md
   - test.md
   - sub:
     - test 11: sub/1-test.md
@@ -60,7 +60,8 @@ nav:
       - sub/subsub/5-test.md
   - MkDocs:
     - mkdocs/index.md
-    - mkdocs/memo.md
+    - mkdocs/extension.md
+    - mkdocs/plugin.md
     - mkdocs/custom-css.md
     - mkdocs/custom-theme.md
     - mkdocs/math.md
@@ -108,12 +109,12 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.keys
   ## Material
-  - admonition # block-styled
+  - admonition
   - footnotes
   - codehilite
   - meta
   ## MkDocs+
-  - fontawesome_markdown # Font Awesome
+  - fontawesome_markdown
   ## others
   - def_list # 定義リスト
   - mdx_truly_sane_lists # tab spaces: 4 (default) to 2
@@ -121,6 +122,11 @@ markdown_extensions:
   #     no_inline_svg: True
   #     insert_fonts_css: True
 
+
+plugins:
+  - search # necessary for search to work
+  - git-revision-date-localized:
+      type: datetime
 
 
 extra_css:
