@@ -10,7 +10,7 @@ title: Development
 
 - master
   - 直pullはしない
-- gh-deploy
+- gh-pages
   - `mkdocs gh-deploy` コマンドで自動にpullされる
   - github pages の公開ブランチ
 - article
