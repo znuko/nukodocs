@@ -65,6 +65,15 @@ nav:
     - mkdocs/custom-css.md
     - mkdocs/custom-theme.md
     - mkdocs/math.md
+  - LaTeX:
+    - LaTeX Tutorial:
+      - tex/tutorial01.md
+      - tex/tutorial02.md
+      - tex/tutorial03.md
+    - kaishi:
+      - tex/kaishi.md
+    - Others:
+      - tex/latexmk.md
 
 
 # Extras
@@ -117,7 +126,7 @@ markdown_extensions:
   - fontawesome_markdown
   ## others
   - def_list # 定義リスト
-  - mdx_truly_sane_lists # tab spaces: 4 (default) to 2
+  - mdx_truly_sane_lists # tab spaces: 4 (default) -> 2
   # - markdown_katex: # KaTeX
   #     no_inline_svg: True
   #     insert_fonts_css: True

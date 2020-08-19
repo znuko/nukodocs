@@ -154,6 +154,13 @@ markdown_extensions:
 
 - [Emoji cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)
 
+installation:
+
+```
+pip install pymdown-extensions
+pip install mkdocs-material-extensions
+```
+
 `mkdocs.yml`:
 
 ```yaml

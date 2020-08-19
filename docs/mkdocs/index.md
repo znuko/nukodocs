@@ -12,13 +12,11 @@ title: Index
 - key words: mkdocs, material, mkdocs+, pymdown, python-markdown, jinja
 
 
-
-
 ## Theme
 
 結構テーマ依存性がある模様。
 
-ここにある説明は `material` というテーマにん限った話が殆どです。
+ここにある説明は `material` というテーマに限った話が殆どです。
 
 ```yaml
 theme:
@@ -54,3 +52,8 @@ theme:
 ## Cheat Sheet
 
 - [Cheat Sheet - MkDocs Material Components](https://yakworks.github.io/mkdocs-material-components/cheat-sheet/)
+
+
+# 備忘録
+
+- mathjax の設定は `/js/mathjax3-config.js` に書いてある。
