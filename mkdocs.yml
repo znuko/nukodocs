@@ -70,8 +70,10 @@ nav:
       - tex/tutorial01.md
       - tex/tutorial02.md
       - tex/tutorial03.md
+      - tex/tutorial04.md
     - kaishi:
-      - tex/kaishi.md
+      - tex/kaishi01.md
+      - tex/kaishi02.md
     - Others:
       - tex/latexmk.md
 
