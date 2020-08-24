@@ -54,7 +54,8 @@ LaTeX は、（本当は正しくないですが）単に tex と略されます
 
 ## TeX Live のインストール
 
-LaTeX を使えるようにするには、LaTeX 本体とその他もろもろがセットになった [TeX Live](http://www.tug.org/texlive/) をインストールするのが手っ取り早いです。
+LaTeX を使えるようにするには、LaTeX 本体とその他もろもろがセットになった
+[TeX Live](http://www.tug.org/texlive/)をインストールするのが手っ取り早いです。
 
 詳しくは以下の記事を参考にしてください。
 
@@ -69,7 +70,7 @@ TeX Live を Mac 用にカスタマイズした [MacTeX](http://tug.org/mactex/)
 
 - [Downloading MacTeX 2020](http://tug.org/mactex/mactex-download.html)
 
-「`MacTeX.pkg`」のリンクをクリックして、インストーラをDLします。
+「`MacTeX.pkg`」のリンクをクリックして、インストーラをDLします。
 
 DLが完了したら、そのパッケージを開いて、インストーラを起動します。
 
@@ -154,7 +155,7 @@ dvipdfmx test.dvi
 
 以上のことから、より簡単にタイプセットするために `latexmk` というコマンドを紹介しておきます。
 
-`latexmk` コマンドで tex 文書をタイプセットするには、あらかじめ設定ファイファイルを配置しておく必要があります。
+`latexmk` コマンドで tex 文書をタイプセットするには、あらかじめ設定ファイルを配置しておく必要があります。
 
 まず、エディタを開いて、新規ファイルをホームディレクトリ（`cd ~` で行ける場所）、あるいは tex ファイルと同じディレクトリに作成します。
 
@@ -216,7 +217,9 @@ TeXShop を起動したら、`cmd + ,` で環境設定を開きます。
 
 ## VSCode（おすすめ）
 
-TeXworks や TeXShop でも十分かもしれませんが、Microsoft 製のフリーソフト「[Visual Studio Code](https://code.visualstudio.com)（略して vscode）」を使えば、もっと快適な LaTeX 環境を構築することができます。
+TeXworks や TeXShop でも十分かもしれませんが、
+Microsoft 製のフリーソフト「[Visual Studio Code](https://code.visualstudio.com)（略して vscode）」を使えば、
+もっと快適な LaTeX 環境を構築することができます。
 
 ここでは、とりあえず vscode で LaTeX のタイプセットができるようになるまでの手順を簡単に述べます。
 
@@ -226,7 +229,9 @@ TeXworks や TeXShop でも十分かもしれませんが、Microsoft 製のフ�
 
 インストールができたら、vscode を起動します。
 
-`cmd + shift + X` （Windowsの場合は  `ctrl + shift + X` ）を押すか、左のサイドバーにある四角が4つあるアイコンをクリックすると、拡張機能の検索窓が開くので、「latex」と入力すれば表示される「[LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop)」という拡張機能をインストールします。
+`cmd + shift + X` （Windowsの場合は  `ctrl + shift + X` ）を押すか、
+左のサイドバーにある四角が4つあるアイコンをクリックすると、拡張機能の検索窓が開くので、
+「latex」と入力すれば表示される「[LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop)」という拡張機能をインストールします。
 
 拡張機能のインストールが完了したら、一旦 vscode を再起動します。
 
@@ -255,6 +260,7 @@ vscode の環境設定ファイル `settings.json` に、以下のコードを�
       ]
     }
   ],
+  "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux", "*.toc", "*.log", "*.dvi", "*.fdb_latexmk", "*.fls"
@@ -263,7 +269,8 @@ vscode の環境設定ファイル `settings.json` に、以下のコードを�
 ```
 
 !!! note
-    `settings.json` の `{ }` の中に既に何か書かれている場合は、その最後の行をカンマ `,` で区切った後、上記コードの `{ }` の中身を、後ろに追加する形でコピペしてください。
+    `settings.json` の `{ }` の中に既に何か書かれている場合は、
+    その最後の行をカンマ `,` で区切った後、上記コードの `{ }` の中身を、後ろに追加する形でコピペしてください。
 
 以上で準備は完了です。
 あとは、texファイルを vscode で開いて、`cmd + opt + B`（Windowsの場合は `ctrl + alt + B`）を押せば、タイプセットできます。
