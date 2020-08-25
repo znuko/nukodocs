@@ -7,7 +7,6 @@ title: 初級編（卒業）
 - 自作マクロ
   - `\def`, `\newcommand`, `\renewcommand`
   - `\newenvironment`
-  - （latex3 のコマンド？）
 - Help
   - ググり方
     - 「tex ＜目的＞」で検索
@@ -22,3 +21,10 @@ title: 初級編（卒業）
 
 
 # はじめに
+
+- synctex
+- platex options
+- cls, sty
+- `\newpage`, `\clearpage`
+  - チュートリアルにはイランか
+- cheat sheet of math command
