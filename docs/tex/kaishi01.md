@@ -2,29 +2,15 @@
 title: kaishi チュートリアル（最小限）
 ---
 
-# かいし
-
-- kaishi チュートリアル（最小限）
-  - そもそも
-    - latex インストール
-    - git インストール
-    - vscode インストール
-      - latex workshop インストール
-      - `settings.json` 配置
-    - `latexmkrc` 配置
-  - githubからソースをDL
-  - 自分の作業ディレクトリを作成
-    - `/tex/` 以下に tex ファイルを作成
-    - template をコピペ
-    - プリアンブルは sty ファイルに書く
-  - タイプセット方法
-
-
 # はじめに
 
 このページでは、会誌（kaishi）で自分の記事を書くための手順を簡潔に述べます。
 
 会誌はもちろん LaTeX を使って書いてもらいます。
+
+2020年度の会誌のリポジトリです；
+
+- https://github.com/vuccaken/kaishi2020
 
 
 # そもそも
@@ -96,7 +82,7 @@ GUI アプリの「[GitHub Desktop](https://desktop.github.com)」
 
 GitHub にある本年度の会誌を丸ごと自分のPCにクローン（ダウンロード）します。
 
-[会誌のリポジトリ]() へアクセスし、「Code」と書いてある緑色のボタンをクリックし、
+[会誌のリポジトリ](https://github.com/vuccaken/kaishi2020) へアクセスし、「Code」と書いてある緑色のボタンをクリックし、
 「Open with GitHub Desktop」を選択します。
 
 GitHub Desktop で開いたら、「Local Path」を好きな所に設定して、リポジトリをクローンします。
