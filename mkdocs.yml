@@ -139,6 +139,7 @@ plugins:
   - search # necessary for search to work
   - git-revision-date-localized:
       type: datetime
+      time_zone: Asia/Tokyo
 
 
 extra_css:
