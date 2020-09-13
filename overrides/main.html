@@ -6,7 +6,7 @@
   #}
 
   {# スペースや改行が入ってしまうので、1行で。 #}
-  <title>{% if page and page.title and not page.is_homepage %}{{ page.title }}{% if page.parent %} - {% endif %}{% if page.parent.parent %}{{ page.parent.parent.title }}{% elif page.parent %}{{ page.parent.title }}{% endif %}|{% endif %}{{ config.site_name }}</title>
+  <title>{% if page and page.title and not page.is_homepage %}{{ page.title }}{% if page.parent %} - {% endif %}{% if page.parent.parent %}{{ page.parent.parent.title }}{% elif page.parent %}{{ page.parent.title }}{% endif %} | {% endif %}{{ config.site_name }}</title>
 
 {%- endblock %}
 
