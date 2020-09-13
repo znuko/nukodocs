@@ -10,7 +10,7 @@ title: kaishi チュートリアル
 
 2020年度の会誌のリポジトリです；
 
-- https://github.com/vuccaken/kaishi2020
+- [vuccaken/kaishi2020 - GitHub](https://github.com/vuccaken/kaishi2020){target=_blank}
 
 
 # そもそも

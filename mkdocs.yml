@@ -132,6 +132,7 @@ markdown_extensions:
   # - markdown_katex: # KaTeX
   #     no_inline_svg: True
   #     insert_fonts_css: True
+  - attr_list # リンクを新規タブで開く
 
 
 plugins:
