@@ -14,6 +14,14 @@ mkdocs serve
 生成されたページを見ることができる。
 
 
+GitHub Pages を更新するには、以下のコマンドでデプロイする。
+
+```sh
+mkdocs gh-deploy
+```
+
+URLはこれ：nukoyama.github.io/mkdocs-test/
+
 ## pip installations
 
 とりま現状で必要なやつら；
