@@ -30,6 +30,7 @@ theme:
   language: ja
   features:
     - navigation.tabs
+    - navigation.expand
     ## instantはonにしないこと。
     ## mathjaxをrenderしなくなる。
     ##   - instant
@@ -42,6 +43,7 @@ theme:
   icon:
     logo: material/library
     repo: fontawesome/brands/git-alt
+    # favicon: material/library
   # logo: images/logo.svg
   # favicon: images/favicon.png
 
