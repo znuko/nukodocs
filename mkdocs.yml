@@ -29,7 +29,7 @@ theme:
   custom_dir: overrides
   language: ja
   features:
-    - tabs
+    - navigation.tabs
     ## instantはonにしないこと。
     ## mathjaxをrenderしなくなる。
     ##   - instant
