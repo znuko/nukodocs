@@ -89,7 +89,10 @@ title: kaishiの解説
 という感じで年々開発が進んできましたが、そろそろ引き継がないとまずいので、ちゃんとマニュアルを作ることにしました。
 
 
-# kaishiのディレクトリ構造
+
+# 一般
+
+## kaishiのディレクトリ構造
 
 kaishiのディレクトリ構造は以下のようになっています；
 
@@ -121,6 +124,42 @@ kaishi/
 
 タイプセットに必要なLaTeXの環境設定は `.latexmkrc` に書かれています。
 エディタvscodeのための設定ファイルのサンプルは `/etc/` の中に置いています。
+
+## タイプセット
+
+会誌のtexファイルのタイプセットには `latexmk` コマンドを使います。
+
+また、エディタ vscode を使えば、ボタン一つでタイプセットできます。
+
+### latexmk でタイプセット
+
+ターミナル（黒い画面のやつ）を開いて、GitHubからクローンした会誌のディレクトリの一番上（`merge.tex` がある階層）に移動します。
+
+記事のtexファイル、例えば `tex/nakasu/nakasu.tex` をタイプセットするには、
+ターミナルから次のコマンドを実行します；
+
+```sh
+latexmk -cd tex/nakasu/nakasu.tex
+```
+
+!!! info
+    サブディレクトリにあるtexファイルを `latexmk` コマンドでタイプセットするときは `-cd` オプションが必要です。
+    このオプションがないと、texファイルで読み込んでいる（画像などの）ファイルのパスが合わなくてうまくタイプセットできません。
+
+!!! attention
+    `merge.tex` があるディレクトリからではなく、タイプセットしたいtexファイルがある `tex/nakasu/` に移動してから `latexmk nakasu.tex` した方が楽と思うかもしれませんが、それではダメです。
+    `latexmk` コマンドのための設定ファイル `.latexmkrc` がカレントディレクトリにないと、タイプセットがうまくいかないからです。
+
+また、記事を統合するための `merge.tex` をタイプセットするには、次のコマンドを実行します；
+
+```sh
+latexmk merge.tex
+```
+
+### vscode でタイプセット
+
+vscodeを使ったタイプセット方法については、[kaishiチュートリアルの方](../tex/kaishi01/#vscode_1)に書いてあるので、そちらを参照してください。
+
 
 # 記事のtexファイル
 
@@ -316,8 +355,255 @@ kaishi/
     プログラミングの力及ばず、この問題は解決することができませんでした。
 
 
+
 # マージ用texファイル
 
 ここでは、各々が書いた会誌記事を読み込んでマージ（統合）するためのtexファイル `merge.tex` のソースコードについて解説します。
 
-ほげほげ
+`merge.tex` の中身は以下のような感じです；
+
+```tex linenums="1"
+\documentclass[uplatex,dvipdfmx,merge]{vkaishi}
+
+% \analogtrue
+% \colorfalse
+
+\usepackage{v-hyperref}
+\usepackage{vuccaken}
+
+\usepackage{author01}
+\usepackage{author02}
+% ...
+
+\begin{document}
+
+\frontmatter
+\vInputTeX[_BK]{01-frontCover}  % 表紙（表）
+\vInputTeX[_BK]{02-insideCover} % 表紙（中）
+\vInputTeX[_BK]{03-kantogen}    % 巻頭言
+\tableofcontents                % 目次
+
+\mainmatter
+\vInputTeX{author01}
+\vInputTeX{author02}
+% ...
+
+\backmatter
+\vInputTeX[_BK]{04-hensyukoki} % 編集後記
+\vInputTeX[_BK]{05-okuduke}    % 奥付
+\vInputTeX[_BK]{06-backCover}  % 表紙（裏）
+
+\end{document}
+```
+
+## document class
+
+1行目はおなじみの `\documentclass` コマンドです；
+
+```tex
+\documentclass[uplatex,dvipdfmx,merge]{vkaishi}
+```
+
+[記事中のtexファイル](#tex)のときとの違いは、オプション引数に `merge` を指定していることです。
+
+このオプションは、`vkaishi.cls` や `vuccaken.sty` の中で、if文のスイッチとして使用しています。
+
+文書クラス（`vkaishi`）のオプションで `merge` が与えられていれば、そのtex文書は記事の統合のためのファイル、与えられていなければ単なる記事のファイルであると判断されます。
+
+## if文スイッチ
+
+```tex
+% \analogtrue
+% \colorfalse
+```
+
+これは[記事中のtexファイル](#tex)で説明したものと同じものです。
+
+## styファイルの読み込み
+
+```tex
+\usepackage{v-hyperref}
+\usepackage{vuccaken}
+
+\usepackage{author01}
+\usepackage{author02}
+% ...
+```
+
+`v-hyperref.sty` と `vuccaken.sty` については、[記事中のtexファイル](#tex)で説明した通りです。
+
+それに続いて読み込んでいるstyファイルは、各記事のtex文書にてプリアンブルの部分を分離したstyファイルです。
+
+二度手間ですが、記事のtexファイルとは別に、各記事のプリアンブル部分を記したstyファイルをそれぞれ読み込んでいます。
+
+## 記事のtex文書の読み込み
+
+`document` 環境内では、`/tex/` 以下にある各記事のtexファイルを読み込んでいます。
+
+フロント・メイン・バックの3つの部分に分けて説明します。
+
+### front部分
+
+```tex
+\frontmatter
+\vInputTeX[_BK]{01-frontCover}  % 表紙（表）
+\vInputTeX[_BK]{02-insideCover} % 表紙（中）
+\vInputTeX[_BK]{03-kantogen}    % 巻頭言
+\tableofcontents                % 目次
+```
+
+この部分では、表紙、中表紙、巻頭言のtexファイルを順に読み込み、その後に目次を作成しています。
+
+`\frontmatter` コマンドは、ページ番号をアラビア数字（`1, 2, 3`）ではなくローマ数字（`i, ii, iii`）で出力するためのものです。
+書籍のフロント部分はページ番号をローマ数字で表示するのが主流です。
+
+`\vInputTeX` コマンドは、標準で定義されている、texファイルを読み込んで挿入するコマンド `\input` を改造したものです。
+
+このコマンドの使い方は、例えば `\vInputTeX[nakasu]{kasumi}` と書くと、`/tex/nakasu/kasumi.tex` の内容の `\begin{document}` ~ `\end{document}` の中身の部分だけが読み込まれ、そのコマンドを書いた箇所に挿入されます。
+
+ディレクトリ名とファイル名が同じ場合は、一つめの引数（`[ ]` ）は省略可能です。
+例えば、`/tex/kasumin/kasumin.tex` を読み込む場合は、一つめの引数を省略して単に `\vInputTeX{kasumin}` と書くだけでも良いです。
+
+### main部分
+
+```tex
+\mainmatter
+\vInputTeX{author01}
+\vInputTeX{author02}
+% ...
+```
+
+この部分で、会誌記事のtexファイルを読み込みます。
+
+`\mainmatter` コマンドで、ページ番号をローマ数字からアラビア数字へと戻しています。
+
+その後に並べられている `\vInputTeX` コマンドでは、会誌記事のtexファイルを読み込んで挿入しています。
+
+会誌参加者の各記事を手動で適宜追加して行ってください。
+ただし、プリアンブル部分のstyファイルの読み込みも忘れないでください。
+
+### back部分
+
+```
+\backmatter
+\vInputTeX[_BK]{04-hensyukoki} % 編集後記
+\vInputTeX[_BK]{05-okuduke}    % 奥付
+\vInputTeX[_BK]{06-backCover}  % 表紙（裏）
+```
+
+メインの会誌記事を読み込んだ後に、編集後記、奥付、裏表紙を挿入しています。
+
+`\backmatter` コマンドは、ページ番号は変わりませんが、一応メインの本文とは区別するためのコマンドです。
+
+!!! info
+    `\backmatter` コマンド以降では、例えば `\chapter` に番号が振られなかったりとかするらしいですが、多分この会誌ではあまり役には立っていません。
+    それでも一応 `\backmatter` コマンドを書いておくことにします。
+
+# 記事以外の部分
+
+ここでは、メインとなる会誌記事以外の部分について解説します。
+
+`/tex/_BK/` 以下に配置している、表紙や巻頭言、奥付などの部分についてです。
+
+## 巻頭言・編集後記
+
+例年の恒例で、会誌記事の前に巻頭言を、後に編集後記を書いています。
+
+巻頭言は、いわゆる序論的なやつです。
+会長が代表して、最近のサークルの活動状況とか、辞世の句などを書いたりします。
+ラフな感じでとりあえず何かしらを自由に書きます。
+
+編集後記は、会誌が完成した後、会誌の取りまとめなどを行った感想を書いたりします。
+こちらも会長が書けばいいと思いますが、他に適役がいればその人が書いてもいいでしょう。
+
+巻頭言・編集後記はそれぞれ `tex/_BK/03-kantogen.tex` と `tex/_BK/04-hensyukoki.tex` の中に書きます。
+
+例えば、`tex/_BK/03-kantogen.tex` の中身は以下のようになっています；
+
+```tex
+\documentclass[uplatex,dvipdfmx]{vkaishi}
+\usepackage{vuccaken}
+\begin{document}
+
+\begin{preface}{巻頭言}
+  {会長}% position
+  {物理科学科1回生}% belong
+  {\vname{中須}{かすみ}}% name
+  {令和二年11月27日}% date
+%%
+ここに巻頭言を書く．
+\end{preface}
+
+\end{document}
+```
+
+`document` 環境の中に、`preface` 環境がただ一つあるだけです。
+この環境の中に巻頭言や編集後記の内容を書きます。
+
+`preface` 環境は5つの引数をとります。
+順に、節の名前（巻頭言か編集後記）、著者の役職（会長とか）、著者の所属学科、著者名、日付を指定します。
+
+## 表紙
+
+表紙もLaTeXで作成します。
+と言っても、タイトルを書いて画像を挿入するだけですが。
+
+例年、会員の誰かに表紙の絵を描いてもらっています。
+それをデカデカと会誌の表紙に載せます（光栄！）。
+
+表紙に挿入する画像以外の情報（会誌タイトルや出版年度など）は、`/sty/vuccaken.sty` の中でまとめて指定できるようにしました。
+
+`vucckaken.sty` の中に書いた次のコマンドたちで指定します；
+
+```tex
+\newcommand\vTitle{白夜}
+\newcommand\vTitleRoma{BYAKUYA}
+\newcommand\vNumbering{第五号}
+\newcommand\vNumberingRoma{V}
+\newcommand\vNendo{令和二年度}
+\newcommand\vYear{2020}
+\newcommand\vDate{2020.08.23}
+```
+
+挿入する画像は、表紙は `/tex/_BK/01-frontCover.tex`、裏表紙は `/tex/_BK/06-backCover.tex` の中で、画像のパスを指定します。
+
+!!! question
+    上に書いたことも含め、表紙の出力の仕方とかその辺はまだ決めかねています。
+    詳細はとりあえず保留にしておきます。
+
+
+## 奥付
+
+奥付とは、著者（ここでは幣研究会）の経歴や、「XX年YY月　初版出版」とかを書くところです。
+
+`/tex/_BK/05-okuduke.tex` がそれを作るtexファイルですが、指定すべき情報は全て `/sty/vuccaken.sty` の中に書くようにしています；
+
+```tex
+\newcommand\vEditor{編集者名}
+\newcommand\vIllustrator{表紙イラスト製作者}
+\newcommand\vPublish{
+  2019年 & 12月 & 1日 & 初版発行 \\
+  % 2020年 & 1月 & 1日 & 第2版発行
+}
+\newcommand\vHistory{
+  1949年 & 核物理研究会として発足 \\
+  % ...
+  2020年 & コロナ禍で学園祭中止 \\
+        & 会誌『白夜 第五号』出版
+}
+```
+
+!!! question
+    表紙と同じく、こちらもまだいろいろと決めかねている状況です。
+    変更するかもしれません。
+
+
+# おわりに
+
+とりあえず、一通り説明をしたつもりです。
+
+イミワカンナイところやバグなどありましたら、
+会誌のリポジトリの「[Issues](https://github.com/vuccaken/kaishi2020/issues)」
+というページで質問・報告してください。
+
+どうしたらいいか、みんなで考えましょう。
