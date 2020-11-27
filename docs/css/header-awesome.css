@@ -63,7 +63,8 @@ contentの部分だけにstyleを指定 */
 }
 
 .md-typeset > p {
-    text-indent: 1em;
+    /* text-indent: 1em; */
+    text-indent: 0em;
 }
 
 .md-typeset > div.admonition {
