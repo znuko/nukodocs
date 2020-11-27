@@ -20,9 +20,13 @@
     border-bottom: 1px solid hsla(0, 0%, 92.5%, .5);
 }
 
+
+/*
+    ページ内リンクのズレ修正と競合
+*/
+/*
 .md-typeset > ::before {
     font-family: "FontAwesome";
-    /* font-family: "Font Awesome 5 Free"; */
     margin-right: .3em;
     display:inline-block !important;
 }
@@ -42,6 +46,7 @@
 .md-typeset h4::before {
     content:"\f0da" !important;
 }
+*/
 
 /* オリジナル */
 /* .md-typeset a:not([class])::before {
