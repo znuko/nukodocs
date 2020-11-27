@@ -27,7 +27,7 @@ title: kaishi チュートリアル
 
 会誌は Word じゃなくて LaTeX で書いてもらいます。
 
-[この記事](https://nukoyama.github.io/mkdocs-test/tex/tutorial01/#pc)
+[この記事](../tutorial01/#pc)
 に従って、LaTeX をインストールしてください。
 
 
@@ -38,7 +38,7 @@ Visual Studio Code（略して vscode）は、Microsoft製のエディタです�
 エディタは何でもいいのですが、各々の環境に合わせて設定（を説明）するのは面倒なので、
 とくにこだわりのない人は全員 vscode を使ってください。
 
-[この記事](https://nukoyama.github.io/mkdocs-test/tex/tutorial01/#vscode)
+[この記事](../tutorial01/#vscode)
 に従って、vscode と、その拡張機能「LaTeX Workshop」をインストールしてください。
 
 
