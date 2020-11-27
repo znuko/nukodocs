@@ -189,16 +189,16 @@ kaishi の `/tex/` ディレクトリ以下に、自分の名前でディレク�
 一番上の階層にペーストします；
 
 ```hl_lines="2 3"
-/
-|- .vscode/
-|     `- setteings.json
-|- ect/
-|   `- .vscode/
-|         `- setteings.json
-|- fonts/
-|- sty/
-|- tex/
-...
+kaishi/
+  |- .vscode/
+  |     `- setteings.json
+  |- ect/
+  |   `- .vscode/
+  |         `- setteings.json
+  |- fonts/
+  |- sty/
+  |- tex/
+  ...
 ```
 
 一旦 vscode を再起動します。
