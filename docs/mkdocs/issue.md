@@ -6,9 +6,13 @@ title: Issues
 
 ## GitHub Pages 自動デプロイ
 
-with GitHub Actions
+with GitHub Actions.
 
-`.github/workflows/ci.yml`:
+`master` ブランチへ push するだけで自動でデプロイしてくれる。
+
+`mkdocs gh-deploy` コマンドをローカルで実行しなくても良くなる。
+
+Actions の設定ファイル `.github/workflows/ci.yml`:
 
 ```yml
 name: ci
@@ -25,8 +29,15 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material
+      - run: pip install pymdown-extensions
+      - run: pip install mkdocs-material-extensions
+      - run: pip install fontawesome_markdown
+      - run: pip install mdx_truly_sane_lists
+      - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: mkdocs gh-deploy --force
 ```
+
+必要なパッケージが増えたら、適宜追加する（`pip install`）。
 
 
 # Material theme
