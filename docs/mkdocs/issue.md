@@ -2,6 +2,33 @@
 title: Issues
 ---
 
+# 環境設定
+
+## GitHub Pages 自動デプロイ
+
+with GitHub Actions
+
+`.github/workflows/ci.yml`:
+
+```yml
+name: ci
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
+```
+
+
 # Material theme
 
 設定やら問題とかの備忘録。
