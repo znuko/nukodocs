@@ -1,3 +1,7 @@
+/*
+    見出しとかのカスタム
+*/
+
 .md-typeset h1 {
     font-weight: bold;
     color: rgba(0, 0, 0, .87);
@@ -20,15 +24,20 @@
     border-bottom: 1px solid hsla(0, 0%, 92.5%, .5);
 }
 
+/* HACK!? */
+.md-typeset h1::first-letter,
+.md-typeset h2::first-letter,
+.md-typeset h3::first-letter,
+.md-typeset h4::first-letter {
+    float: left;
+    margin-right: .3em;
+    /* color: red; */
+}
 
-/*
-    ページ内リンクのズレ修正と競合
-*/
-/*
 .md-typeset > ::before {
     font-family: "FontAwesome";
-    margin-right: .3em;
-    display:inline-block !important;
+    /* margin-right: .3em; */
+    /* display:inline-block !important; */
 }
 
 .md-typeset h1::before {
@@ -46,7 +55,7 @@
 .md-typeset h4::before {
     content:"\f0da" !important;
 }
-*/
+
 
 /* オリジナル */
 /* .md-typeset a:not([class])::before {
