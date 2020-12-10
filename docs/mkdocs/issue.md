@@ -14,7 +14,7 @@ with GitHub Actions.
 
 Actions の設定ファイル `.github/workflows/ci.yml`:
 
-```yml
+```yaml
 name: ci
 on:
   push:
@@ -82,3 +82,32 @@ h1::before {
 としなければならないが、これはページ内リンクのズレ修正と競合してしまう。
 
 Font Awesome で装飾文字を入れたいが、とりあえずは諦めることにする。
+
+### 追記
+
+1文字だけだったら、Materialテーマと競合せず、見出しの先頭に文字を入れることができた。
+
+```css
+/* 擬似クラス ::first-letter を使う */
+.md-typeset h1::first-letter,
+.md-typeset h2::first-letter,
+.md-typeset h3::first-letter,
+.md-typeset h4::first-letter {
+  float: left;
+  margin-right: .3em;
+}
+
+/* display: block; のまま */
+.md-typeset > ::before {
+  font-family: "FontAwesome";
+  /* margin-right: .3em; */
+  /* display:inline-block !important; */
+}
+
+/* content のプロパティは1文字だけ */
+.md-typeset h1::before {
+  content: "\f02d" !important;
+}
+```
+
+多分うまいこといってる。
