@@ -53,6 +53,14 @@ $ENV{'TEXINPUTS'} = './sty//;' . '../sty//;' . '../../sty//;';
 $ENV{'OPENTYPEFONTS'} = './fonts//;' . '../fonts//;' . '../../fonts//;';
 ```
 
+#### 設定ファイルのパス
+
+好きなところにパスを通せる；
+
+```perl
+read_first_rc_file_in_list( '../../latexmkrc', '../../.latexmkrc' );
+```
+
 
 
 ### typeset
