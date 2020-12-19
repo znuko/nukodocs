@@ -17,7 +17,7 @@ title: kaishi チュートリアル
 
 まず前提として、次の3つを自分のPCにインストールしてください；
 
-- LaTeX (TeX Live)
+- LaTeX（TeX Live）
 - vscode（エディタ）
 - GitHub Desktop（Git の GUI アプリ）
 
@@ -27,9 +27,11 @@ title: kaishi チュートリアル
 
 会誌は Word じゃなくて LaTeX で書いてもらいます。
 
-[この記事](../tutorial01/#pc)
+[この記事](tutorial01.md#pc)
 に従って、LaTeX をインストールしてください。
 
+!!! tip
+    今どきはクラウドの時代で、LaTeX においても [Overleaf](https://www.overleaf.com){target=_blank} という Web サービスを利用することで、わざわざ自分の PC に LaTeX をインストールしないでも、オンライン上で LaTeX の文書の編集・タイプセットが無料で行えるのですが、Overleaf を GitHub と連携して利用するためには有料プランに加入しなくてはならず、我々はケチケチとオフラインででてふてふすることを基本としました。
 
 ## vscode のインストール
 
@@ -38,22 +40,24 @@ Visual Studio Code（略して vscode）は、Microsoft製のエディタです�
 エディタは何でもいいのですが、各々の環境に合わせて設定（を説明）するのは面倒なので、
 とくにこだわりのない人は全員 vscode を使ってください。
 
-[この記事](../tutorial01/#vscode)
+[この記事](tutorial01.md#vscode)
 に従って、vscode と、その拡張機能「LaTeX Workshop」をインストールしてください。
 
+!!! info
+    コマンドラインからのタイプセット方法は[次の記事](kaishi02.md#typeset)で説明しています。
 
 ## GitHub のアカウント作成
 
 詳しくは説明しませんが、ファイルのバージョン管理ツールとして「Git」というものがあります。
 
-会誌の作成では、Git を利用したサービスのひとつである「[GitHub](https://github.com)」を利用します。
+会誌の作成では、Git を利用したサービスのひとつである「[GitHub](https://github.com){target=_blank}」を利用します。
 
 GitHub というWebサービスを利用することで、会誌の共同開発が可能になります。
 
 まずは、[GitHub のサイト](https://github.com) に飛んでもらって、
 各自アカウントを作成してください。
 
-自分のアカウントが作成できたら、[物科研の Organization](https://github.com/vuccaken) に参加してもらいます。
+自分のアカウントが作成できたら、[物科研の Organization](https://github.com/vuccaken){target=_blank} に参加してもらいます。
 
 既に参加済みの人に、自分の GitHub アカウントを教えて、招待してもらってください。
 
@@ -61,7 +65,7 @@ GitHub というWebサービスを利用することで、会誌の共同開発�
 ## GitHub Desktop のインストール
 
 Git の CUI（コマンドライン）での操作は初心者には大変なので、
-GUI アプリの「[GitHub Desktop](https://desktop.github.com)」
+GUI アプリの「[GitHub Desktop](https://desktop.github.com){target=_blank}」
 を利用することにします。
 
 下記リンクから GitHub Desktop をインストールしてください；
@@ -83,8 +87,10 @@ GUI アプリの「[GitHub Desktop](https://desktop.github.com)」
 
 GitHub にある本年度の会誌を丸ごと自分のPCにクローン（ダウンロード＆git管理）します。
 
-[会誌のリポジトリ](https://github.com/vuccaken/kaishi2020) へアクセスし、「Code」と書いてある緑色のボタンをクリックし、
-「Open with GitHub Desktop」を選択します。
+[会誌のリポジトリ](https://github.com/vuccaken/kaishi2020){target=_blank} へアクセスし、
+「Code」と書いてある緑色のボタンをクリックし、「Open with GitHub Desktop」を選択します。
+
+![](img/github_clone.png)
 
 GitHub Desktop で開いたら、「Local Path」を好きな所に設定して、リポジトリをクローンします。
 
@@ -110,7 +116,7 @@ GitHub Desktop で開いたら、「Local Path」を好きな所に設定して�
 
 GitHub Desktop で会誌のリポジトリを開きます。
 
-![](/tex/img/github_desktop01.png)
+![](img/github_desktop01.png)
 
 ウインドウ上部中央にある「Current Branch」をクリックし、
 `develop` ブランチを選択します。
@@ -119,7 +125,7 @@ GitHub Desktop で会誌のリポジトリを開きます。
 Current Branch が `develop` になっていることが確認できたら、
 もう一度「Current Branch」をクリックして、今度は「New Branch」ボタンをクリックします。
 
-![](/tex/img/github_desktop_new_branch.png)
+![](img/github_desktop_new_branch.png)
 
 「Name」には、さっき決めた自分の名前を `<NAME>` として、次のような名前でブランチ名を入力します；
 
@@ -142,7 +148,7 @@ feature-article-<NAME>
 
 リモートリポジトリにも反映させるためには、上部右上の「Publish branch」ボタンをクリックします。
 
-![](/tex/img/github_desktop_publish_branch.png)
+![](img/github_desktop_publish_branch.png)
 
 これでリモートのGitHubにあるリポジトリ上でも、ブランチが作成されました。
 
@@ -162,7 +168,7 @@ feature-article-<NAME>
     
     のキーバインドを入力すれば、自動でリポジトリをデフォルトで設定したエディタで開いてくれます。
 
-![](/tex/img/vscode01.png)
+![](img/vscode01.png)
 
 kaishi の `/tex/` ディレクトリ以下に、自分の名前でディレクトリを作成します；
 
@@ -257,7 +263,7 @@ kaishi/
 左のサイドバーにある「TEX」アイコンをクリックし、
 「Build LaTeX project」から「Recipe: kaishi」をクリックすると、タイプセットが始まります。
 
-![](/tex/img/vscode_typset.png)
+![](img/vscode_typset.png)
 
 次からは、`cmd + option + B` でタイプセットできます（Mac）。
 Windows の場合は `ctrl + alt + B` です。
@@ -305,7 +311,7 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 まだローカルにしかコミットが反映されていないので、
 ウインドウ上部右にある「Push origin」をクリックしてプッシュします。
 
-![](/tex/img/github_desktop_push.png)
+![](img/github_desktop_push.png)
 
 これで、リモートの方にも変更が反映されました。
 
@@ -345,8 +351,11 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 「Create Pull Request」ボタンをクリックするか `cmd + R` を入力すると、
 ブラウザでプルリクエスト画面が表示されます。
 
+![](img/github_pull_request.png)
+
 「compare:」のところに自分のブランチが、「base:」のところに `develop` ブランチが表示されるように設定して、
 「Create pull request」ボタンをクリックします。
+任意でコメントを付けることもできます。
 
 問題がなければ、「Marge pull request」というボタンが表示されますが、
 ここから先は自分1人では行わないでください。
@@ -354,28 +363,28 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 会誌のリポジトリの管理者が、問題がないかチェックしてからマージを行います。
 
 !!! note
-    プルリクエストがきたら、みんなで会誌記事の校正をしてあげましょう。
+    誰かがプルリクエストを行ったら、みんなで会誌記事の校正をしてあげましょう。
     プルリクエストのページから、それに対してコメントができるのでうまく利用してください。
 
-!!! Note
-    システム的には全員が管理者権限を持っているので、全員の校正が済んだら、適当な誰かがマージを実行すればいいと思います。
+!!! note
+    システム的には全員が管理者権限を持っているので、全員の校正が済んだら、適当な誰かがマージを実行すれば良いと思います。
     マージはプルリクエストのページ（GitHub上）で行うことができます。
 
 
 ## 派生元ブランチの変更を取り入れる
 
-派生元の `develop` ブランチが新しくなっている場合、その変更を自分の作業ブランチへ取り入れることができます。
+派生元の `develop` ブランチが新しくなっている場合、その変更を自分の作業ブランチへ取り入れる（マージする）ことができます。
 
 !!! note
-    プルリクエストを行う際には、自動でこの操作が行われます。
+    この操作は、派生元ブランチへプルリクエストを行う際に自動で行われます。
     手動で行うのは、全体のバグ修正などで管理者からアナウンスがあったときぐらいで十分です。
 
-    とりあえずは、自分の記事更新作業に集中してもらえば良いです。
+    とりあえずこの操作のことは気にせず、自分の会誌記事の更新作業に集中してもらえば良いかと思います。
 
-それを行うには、まずツールバーの「Branch」から「Merge into Current Branch」を選択するか、
+この操作を行うには、まずツールバーの「Branch」から「Merge into Current Branch」を選択するか、
 あるいはキーバインド `cmd + shift + M` を入力します（Windowsは `ctrl + shift + M`）。
 
-![](/tex/img/github_desktop_merge_into.png)
+![](img/github_desktop_merge_into.png)
 
 表示されるポップアップで、派生元である `develop` ブランチを選択し、
 「Merge develop into `feature-article-<NAME>`」ボタンを押します。
@@ -409,24 +418,51 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 管理者によって、無事にプルリクエストがマージされれば完了です。
 
 
-
 # 会誌記事を書くときの注意点（ルール）
 
-会誌は好きな書いてもいいとは言っても、全体を統合したりする関係でいくつかルールがあります。
+会誌は好きに書いても良いとは言っても、全員の記事を統合したりする関係でいくつかルールがあります。
 
-詳しくは[次の会誌解説記事](kaishi02.md)で行うことにして、ここでは最低限必要なことについてだけ、簡単に述べることにします。
+詳しくは[次の記事](kaishi02.md)で行うことにして、ここでは最低限必要なことについてだけ、簡単に述べることにします。
 
 
 ## プリアンブル
 
 `#!tex \documentclass{}` と `#!tex \begin{document}` の間の領域をプリアンブルと言います。
 
-プリアンブルに書いた内容は、全員の記事をマージする（`merge.tex` で読み込む）際には無視されてしまいます。
+プリアンブルに書いた内容は、全員の記事を統合する（`merge.tex` で読み込む）際には無視されてしまいます。
 
 パッケージ（sty ファイル）の読み込みや、マクロの定義は、最初に作成した自分の sty ファイルの中に書いてください。
 
-書き方は、普通にプリアンブルに書くときと同じでいいので、難しく考えないでいいです。
+書き方は、普通にプリアンブルに書くときと同じでいいです。
 
+!!! example
+    ```tex
+    %% This file is `nakasu.sty`
+
+    \usepackage{amsmath}
+    \usepackage{physics}
+
+    \newcomannd\kawaii[1]{#1 かわいい}
+    ...
+    ```
+
+    ```tex
+    %% This file is `nakasu.tex`
+
+    \documentclass[uplatex,dvipdfmx]{vkaishi}
+
+    \usepackage{vuccaken}
+    \usepakage{nakasu} % 自分のstyファイル
+
+    %% ここに何か書いても、統合する際には無視されてしまう
+    %% \usepackage やマクロの定義は自分のstyファイル内で行う
+
+    \begin{document}
+    ...
+    ```
+
+!!! failure
+    どうしてこんな面倒なことをしなきゃいけないのか疑問に思うかもしれませんが、理由は簡単で、ただ単に kaishi 開発者のプログラミング力が足りなくて実装できなかっただけです。すいません。
 
 ## 会誌のタイトル
 
@@ -440,6 +476,8 @@ GitHub Desktop を開くと、変更した部分が表示されています。
     \title{無敵級*ビリーバー} % タイトル
     \author[中須]{かすみ}    % 名前
     \belong{普通科}{1}      % 学部学科・回生
+
+    \maketitle             % タイトル出力
     ```
 
 !!! info
@@ -469,20 +507,40 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 
 形式はテンプレで示しているものがおそらく正しいので、できるだけその形式を守ってください。
 
-!!! warning
-    残念ながら、参考文献や図・数式などのラベルは他人と被ってはいけません。
-    なので、最終的に全員の記事をマージする際に、ラベル名を変更してもらう場合があります。
 
-    とりあえずは気にせず記事を書き進めてください。
+## ラベル名
+
+残念ながら、`\label` コマンドで指定する参考文献や図・数式などのラベル名は他人と被ってはいけません。
+
+とりあえずは気にせず記事を書き進めてもらって構いませんが、
+もしかすると全体と統合する際にラベル名の変更をお願いする場合があるということだけ覚えておいてください。
+
+!!! info
+    ラベル名に重複があると、タイプセットの際に LaTeX が警告（エラーではない）をログに吐いてくれます。
+    エラーは出ずタイプセットは通ってしまうので、統合した際に警告が出ていないかチェックを忘れないようにしてください。
+
+!!! failure
+    各記事を読み込む際にラベル名がユニークになるように `\label` や `\ref` を置換すればいいと思ったのですが、LaTeX の処理が複雑でなんか無理でした。
+
+!!! success
+    本来は記事に挿入する画像のファイル名についても同様に他人とかぶってはいけないという問題があります。
+    しかし、この問題に関しては、超人的なプログラミング力によって解決済みです。
+
+    よって、画像のファイル名に関しては、他の人とファイル名が被る心配はしなくても良いです。
 
 
 ## 句読点の自動置換
 
-~~句読点は、和文のもの（`、。`）ではなく、欧文の全角のもの（`，．`）で統一したいと思います。~~
+句読点は、和文のもの（`、。`）ではなく、欧文の全角のもの（`，．`）で統一したいと思います。
 
 ~~そのため、（vscode で）タイプセットする際に、自動で句読点を置換するように設定していますので注意してください。~~
 
-自動置換は一旦やめることにしました。どうやら perl コマンドが使えないみたいです（パスが通っていない）。
+!!! error
+    句読点の自動置換は一旦やめることにしました。どうやら `perl` コマンドが使えないみたいです（パスが通っていない）。
+    `latexmk` が `perl` で動いているので、インストールはされているはずなのですが、Windows でのパスがわかりません。
+
+!!! question
+    ということで、全体で統一せずに各自に任せるか、最終段階で一括置換するか、どうしましょう。
 
 !!! note
     一部（タイトルとか）で和文の句読点が使いたいときは、それぞれ句点 `\vku`、読点 `\vtou` のコマンドを書いてください。
@@ -493,7 +551,7 @@ GitHub Desktop を開くと、変更した部分が表示されています。
 多分、よくわからないと思います。
 
 Git とか vscode とかが、何もしてないのに勝手におかしくなったりしたら、
-GitHub の会誌のリポジトリに「[Issues](https://github.com/vuccaken/kaishi2020/issues)」というページがあるので、
+GitHub の会誌のリポジトリに「[Issues](https://github.com/vuccaken/kaishi2020/issues){target=_blank}」というページがあるので、
 そこで質問を投げてください。
 
 リポジトリの Issues タブにアクセスしたら、「New issue」を押して、
