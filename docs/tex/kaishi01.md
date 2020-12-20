@@ -240,23 +240,26 @@ kaishi の `/tex/` ディレクトリ以下に、自分の名前でディレク�
 
 はじめに、vscode の設定ファイルを配置します。
 
-`/etc/` ディレクトリにある `.vscode/settings.json` を **コピー** して、
-一番上の階層にペーストします；
+`/etc/` ディレクトリにある `.vscode/settings.json` という設定ファイルを、
+一番上の階層（`merge.tex` と同じ階層）に配置（コピペ）します。
 
-```hl_lines="2 3"
+```hl_lines="2"
 kaishi/
-  |- .vscode/        % ここにペースト
-  |     `- settings.json
+  |- .vscode/settings.json     % ここに配置
   |- ect/
-  |   `- .vscode/    % これをコピー
-  |         `- settings.json
+  |   `- .vscode/settings.json % これをコピー
   |- fonts/
   |- sty/
   |- tex/
+  |- merge.tex
   ...
 ```
 
-一旦 vscode を再起動します。
+!!! note
+    `.vscode/` というディレクトリごとコピーしてペーストしてください。
+    このディレクトリが vscode の設定ファイルを配置する場所となります。
+
+設定を反映させるために、一旦 vscode を再起動します。
 改めて会誌のリポジトリを開いてください。
 
 !!! info
