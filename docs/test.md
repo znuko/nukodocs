@@ -88,3 +88,5 @@ plt.plot([1, 2])
 :apple:
 
 <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E6%A0%84%E5%85%89%E3%81%A8%E7%B2%9B%E6%B8%85%E3%81%AE%E3%83%9E%E3%83%BC%E3%83%81/1491920601?i=1491920602"></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q7SbeF3Oqu8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin: 0 auto;"></iframe>

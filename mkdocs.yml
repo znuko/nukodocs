@@ -50,7 +50,7 @@ theme:
 
 nav:
   - Home: index.md
-  - develop.md
+  - welcome.md
   - test.md
   - sub:
     - test 11: sub/1-test.md
