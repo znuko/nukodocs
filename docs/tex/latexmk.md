@@ -8,9 +8,9 @@ title: latexmk について
 以下、とりまメモ
 ----
 
-## latexmk
+# latexmk
 
-### latexmk options
+## latexmk options
 
 `latexmk -help` でoption一覧表示。
 
@@ -22,7 +22,7 @@ title: latexmk について
 | `-pvc`            |                                                              |
 |                   |                                                              |
 
-### latex options
+## latex options
 
 `latexmk` にも渡すことができる（多分）。
 
@@ -37,23 +37,33 @@ title: latexmk について
 
 
 
-### .latexmkrc
+## .latexmkrc
 
 `latexmk` の設定ファイル。perlで書かれている。
 
-#### path
+### path
 
 スタイルファイル（.sty）を探索する場所（パス）を追加
 ```perl
-$ENV{'TEXINPUTS'} = './sty//;' . '../sty//;' . '../../sty//;';
+$ENV{'TEXINPUTS'} = './sty//;' . '../../sty//;';
 ```
 
 フォントを探索する場所（パス）を追加
 ```perl
-$ENV{'OPENTYPEFONTS'} = './fonts//;' . '../fonts//;' . '../../fonts//;';
+$ENV{'OPENTYPEFONTS'} = './fonts//;' . '../../fonts//;';
 ```
 
-#### 設定ファイルのパス
+あるいは、まとめて
+```perl
+$ENV{'TEXMFHOME'} = './/;' . '../../sty//;' . '../../fonts//;';
+```
+
+以下のように書いても同じ意味；
+```perl
+ensure_path(TEXMFHOME, './/;' . '../../sty//;' . '../../fonts//;');
+```
+
+### 設定ファイルのパス
 
 好きなところにパスを通せる；
 
@@ -61,9 +71,45 @@ $ENV{'OPENTYPEFONTS'} = './fonts//;' . '../fonts//;' . '../../fonts//;';
 read_first_rc_file_in_list( '../../latexmkrc', '../../.latexmkrc' );
 ```
 
+`latexmk` に直接設定ファイルを渡せる `-r` オプションがある；
+
+```sh
+latexmk -r '../../.latexmkrc' hoge.tex
+```
+
+ただし、その渡した `.latexmkrc` ファイルがそこに存在しないとエラーが出る。
 
 
-### typeset
+## perl ボツコード
+
+vscodeで必要かと思ったけど、冗長だった。
+
+```perl
+## カレントディレクトリのパスを取得。
+use Cwd;
+my $current_dir = getcwd;
+
+## ルートディレクトリを探る
+## for vscode
+$merge_file = 'merge.tex';
+if (-e $merge_file) {
+  $root_dir = $current_dir;
+} elsif (-e '../../' . $merge_file) {
+  $root_dir = $current_dir . '/../..';
+}
+## コマンドラインから実行するならこれで十分
+# $root_dir = $current_dir;
+
+## sty や font を探索するパスを追加
+$ENV{'TEXMFHOME'} = $root_dir . '//;';
+# $ENV{'TEXINPUTS'} = $root_dir . '/sty//;' . $root_dir . '/tex//;';
+# $ENV{'OPENTYPEFONTS'} = $root_dir . '/fonts//;';
+
+# print 'set TEXMFHOME: ' . $ENV{'TEXMFHOME'};
+```
+
+
+## typeset
 
 - エディタ（texshop, vscode, etc）で、サブディレクトリにあるtexファイルをlatexmkを用いてタイプセットするとき、親ディレクトリにある `.latexmkrc` は読み込まない。
   -  `.latexmkrc` はホームディレクトリ `~` に置いておくか、texファイルと同じディレクトリに置いておかなければならない。
@@ -72,7 +118,7 @@ read_first_rc_file_in_list( '../../latexmkrc', '../../.latexmkrc' );
 
 
 
-## vscode
+# vscode
 
 - カレントディレクトリ直下、サブディレクトリに関わらず、タイプセット するtexファイルと同じディレクトリにある `.latexmkrc` しか読み込まない。
   - ホームディレクトリにある `.latexmkrc` は読み込む。
@@ -80,7 +126,7 @@ read_first_rc_file_in_list( '../../latexmkrc', '../../.latexmkrc' );
 
 
 
-### .vscode/settings.json
+## .vscode/settings.json
 
 `.vscode/settings.json` のテンプレート
 
@@ -97,8 +143,9 @@ read_first_rc_file_in_list( '../../latexmkrc', '../../.latexmkrc' );
         "-e", "$biber                = 'biber %O --bblencoding=utf8 -u -U --output_safechars %B'",
         "-e", "$makeindex            = 'upmendex %O -o %D %S'",
         "-e", "$dvipdf               = 'dvipdfmx %O -o %D %S';",
-        "-e", "$ENV{'TEXINPUTS'}     = './sty//;' . '../sty//;' . '../../sty//;' . './tex//;' . '../../tex//;'",
-        "-e", "$ENV{'OPENTYPEFONTS'} = './fonts//;' . '../fonts//;' . '../../fonts//;'",
+        // "-e", "$ENV{'TEXINPUTS'}     = './sty//;' . '../sty//;' . '../../sty//;' . './tex//;' . '../../tex//;'",
+        // "-e", "$ENV{'OPENTYPEFONTS'} = './fonts//;' . '../fonts//;' . '../../fonts//;'",
+        "-e", "$ENV{'TEXMFHOME'}     = './/;' . '../../sty//;' . '../../fonts//;'",
         "-pdfdvi",
         "%DOC%"
       ]
