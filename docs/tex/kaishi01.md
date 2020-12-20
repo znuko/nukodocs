@@ -96,6 +96,16 @@ GitHub Desktop で開いたら、「Local Path」を好きな所に設定して�
 
 以上で、自分のPC内で会誌を編集することができるようになりました。
 
+!!! Note
+    既に GitHub Desktop アプリをインストールしているにも関わらず、GitHubで「Open with GitHub Desktop」をクリックしても、GitHub Desktop アプリが自動で開かない場合は、GitHub Desktop アプリの方から直接リポジトリをクローンします。
+
+    [会誌のリポジトリ](https://github.com/vuccaken/kaishi2020){target=_blank}を開き、「Code」ボタンをクリックして表示されるURLをコピーします。
+
+    次に、GitHub Desktop アプリを開いて、上部左の「Current Repository」をクリックします。
+    「Add」ボタンをクリックして「Clone Repository...」を選択します。
+
+    表示されたポップアップで右側の「URL」タブを開いて、上の入力欄に先ほどコピーしたURLを貼り付けます。
+    下の「Local Path」を好きなところに設定し「Clone」ボタンを押してクローンします。
 
 ## 自分の記事の作成
 
@@ -105,6 +115,8 @@ GitHub Desktop で開いたら、「Local Path」を好きな所に設定して�
 
 例えば、`nkym` とか `Crazy_Apple` とか `kasumin0123` とかで、使える文字はアルファベットか数字ぐらいです。
 無難に苗字のローマ字でいいです。
+
+次に GitHub Desktop アプリを開いて
 
 
 ### 自分の作業 Branch を作成
