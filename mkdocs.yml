@@ -148,11 +148,11 @@ plugins:
 
 extra_css:
   - "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  - css/header-awesome.css
+  - assets/css/header-awesome.css
 
 extra_javascript:
   ## mathjax version 3
-  - js/mathjax3-config.js
+  - assets/js/mathjax3-config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   ## mathjax version 2
