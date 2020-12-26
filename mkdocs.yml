@@ -43,7 +43,7 @@ theme:
   icon:
     logo: material/library
     repo: fontawesome/brands/git-alt
-    # favicon: material/library
+    favicon: kasmin01.png
   # logo: images/logo.svg
   # favicon: images/favicon.png
 
