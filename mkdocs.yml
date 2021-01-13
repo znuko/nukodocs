@@ -49,17 +49,18 @@ theme:
 
 
 nav:
-  - Home: index.md
-  - welcome.md
-  - test.md
-  - sub:
-    - test 11: sub/1-test.md
-    - test 2: sub/2-test.md
-    - test 3: sub/3-test.md
-    - subsub:
-      - test 3: sub/subsub/3-test.md
-      - test 4: sub/subsub/4-test.md
-      - sub/subsub/5-test.md
+  - Home:
+    - index.md
+    - welcome.md
+    - test.md
+    - sub:
+      - test 11: sub/1-test.md
+      - test 2: sub/2-test.md
+      - test 3: sub/3-test.md
+      - subsub:
+        - test 3: sub/subsub/3-test.md
+        - test 4: sub/subsub/4-test.md
+        - sub/subsub/5-test.md
   - MkDocs:
     - mkdocs/index.md
     - mkdocs/issue.md
