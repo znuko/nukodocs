@@ -2,16 +2,16 @@
 
 ## Project information
 site_name: nukoDocs
-site_description: Documents for nukoyama
+site_description: Documents for znuko
 site_author: nukoyama
-site_url: https://nukoyama.github.io/mkdocs-test/
+site_url: https://znuko.github.io/nukodocs/
 
 ## Repository
 repo_name: nukoyama/mkdocs-test
 repo_url: https://github.com/nukoyama/mkdocs-test
 
 ## Copyright
-copyright: Copyright &copy; 2020 nukoyama
+copyright: Copyright &copy; 2021 znuko
 
 # Google Analytics
 google_analytics:
