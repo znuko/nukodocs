@@ -81,6 +81,9 @@ nav:
       - tex/kaishi03.md
     - Others:
       - tex/latexmk.md
+  - Heroku:
+    - heroku/index.md
+    - heroku/rails.md
 
 
 # Extras
