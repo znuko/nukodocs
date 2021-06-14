@@ -2,13 +2,12 @@
 title: Index
 ---
 
-# General info
+# Mkdocsについて
 
-## MkDocs
+## 何からできてるのか
 
 - template language: Jinja
 - base: Python Markdown
-
 - key words: mkdocs, material, mkdocs+, pymdown, python-markdown, jinja
 
 

@@ -63,6 +63,7 @@ nav:
         - sub/subsub/5-test.md
   - MkDocs:
     - mkdocs/index.md
+    - mkdocs/develop.md
     - mkdocs/issue.md
     - mkdocs/extension.md
     - mkdocs/plugin.md
