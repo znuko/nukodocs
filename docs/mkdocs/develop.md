@@ -4,19 +4,19 @@ title: Develop
 
 # 環境構築
 
-Mkdocsの使い方のメモ。
+MkDocsの使い方のメモ。
 
 
 ## Installation
 
-!!! warning
-    インストールはHomeBrewではなくpipでインストールすること。
-
-mkdocs のインストール；
+MkDocsのインストール；
 
 ```sh
 pip install mkdocs
 ```
+
+!!! warning
+    MkDocsのインストールはHomeBrewではなくpipで行うこと。
 
 
 ## ビルド
