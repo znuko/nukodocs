@@ -1,0 +1,24 @@
+name: Publish docs via GitHub Pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXTRA_PACKAGES:
+            - mkdocs-material
+            - pymdown-extensions
+            - mkdocs-material-extensions
+            - fontawesome_markdown
+            - mdx_truly_sane_lists
+            - mkdocs-git-revision-date-localized-plugin
