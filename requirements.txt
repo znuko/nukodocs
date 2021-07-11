@@ -1,0 +1,6 @@
+mkdocs-material
+pymdown-extensions
+mkdocs-material-extensions
+fontawesome_markdown
+mdx_truly_sane_lists
+mkdocs-git-revision-date-localized-plugin
