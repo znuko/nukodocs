@@ -7,8 +7,8 @@ site_author: nukoyama
 site_url: https://znuko.github.io/nukodocs/
 
 ## Repository
-repo_name: nukoyama/mkdocs-test
-repo_url: https://github.com/nukoyama/mkdocs-test
+repo_name: znuko/nukodocs
+repo_url: https://github.com/znuko/nukodocs
 
 ## Copyright
 copyright: Copyright &copy; 2021 znuko
@@ -43,7 +43,7 @@ theme:
   icon:
     logo: material/library
     repo: fontawesome/brands/git-alt
-    favicon: kasmin01.png
+    favicon: assets/img/kasmin01.png
   # logo: images/logo.svg
   # favicon: images/favicon.png
 
