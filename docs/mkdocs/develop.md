@@ -154,13 +154,16 @@ jobs:
     リポジトリの「Settings」>「Actions」の「Workflow permissions」のところで、「Read repository contents permission」にチェックが入っている場合は、Actionsにpush権限がないので、tokenを設定してやらないといけないらしい。
     今のところは「Read and write permissions」にチェックを入れているので、特に気にする必要はないっぽい。
 
-上の設定では、`master`ブランチにpushがあったときに、`gh-deploy`ブランチにビルドしたサイトをpushするようなActionが実行される。
-
-なので、GitHub Pagesで公開するブランチは `gh-deploy` のルート `/` を指定する。
-
-!!! info
-    もちろん細かい設定は変更可能。詳細は公式のマニュアルを参照。
-
 ここに書いたworkflowでは、GitHub Actions公式のMkDocsをDeployするActionsを使っている。
 
 - マニュアル： https://github.com/marketplace/actions/deploy-mkdocs
+
+デフォルトの設定では、`master`ブランチにpushがあったときに、`gh-deploy`ブランチにビルドしたサイトをpushするようなActionが実行される。
+
+なので、GitHub Pagesで公開するブランチは `gh-deploy` のルート `/` を指定する。
+
+また、必要なパッケージは `requirements.txt` にまとめて書いておくと、自動で読み込まれる。
+
+!!! info
+    もちろん細かい設定は変更可能。詳細は[公式のマニュアル](https://github.com/marketplace/actions/deploy-mkdocshttps://github.com/marketplace/actions/deploy-mkdocs)を参照。
+
