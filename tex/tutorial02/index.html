@@ -1,0 +1,2265 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documents for znuko">
+      
+      
+      
+        <meta name="author" content="nukoyama">
+      
+      
+        <link rel="canonical" href="https://znuko.github.io/nukodocs/tex/tutorial02/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+  
+
+  
+  <title>初級編（後編） - LaTeX | nukoDocs</title>
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/header-awesome.css">
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-165061642-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="nukoDocs" class="md-header__button md-logo" aria-label="nukoDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nukoDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              初級編（後編）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/znuko/nukodocs/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    znuko/nukodocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../mkdocs/" class="md-tabs__link">
+        MkDocs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../jekyll/" class="md-tabs__link">
+        Jekyll
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorial01/" class="md-tabs__link md-tabs__link--active">
+        LaTeX
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../heroku/" class="md-tabs__link">
+        Heroku
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nukoDocs" class="md-nav__button md-logo" aria-label="nukoDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    nukoDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/znuko/nukodocs/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    znuko/nukodocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/" class="md-nav__link">
+        にゃんこぺーじ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        sub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="sub" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          sub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/1-test/" class="md-nav__link">
+        test 11
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/2-test/" class="md-nav__link">
+        test 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/3-test/" class="md-nav__link">
+        test 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4_4" checked>
+      
+      <label class="md-nav__link" for="__nav_1_4_4">
+        subsub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="subsub" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          subsub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/3-test/" class="md-nav__link">
+        test 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/4-test/" class="md-nav__link">
+        test 4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/5-test/" class="md-nav__link">
+        second
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        MkDocs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MkDocs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          MkDocs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/develop/" class="md-nav__link">
+        Develop
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/issue/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/extension/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/plugin/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/custom-css/" class="md-nav__link">
+        Customize CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/custom-theme/" class="md-nav__link">
+        Customize Theme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/math/" class="md-nav__link">
+        MathJax
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Jekyll
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Jekyll" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Jekyll
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jekyll/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jekyll/kramdown/" class="md-nav__link">
+        Kramdown
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        LaTeX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LaTeX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        LaTeX Tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LaTeX Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial01/" class="md-nav__link">
+        初級編（前編）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          初級編（後編）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        初級編（後編）
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+    <nav class="md-nav" aria-label="はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    このチュートリアルの内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tex" class="md-nav__link">
+    tex用語・文書構成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    基本的な LaTeX コマンド
+  </a>
+  
+    <nav class="md-nav" aria-label="基本的な LaTeX コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コメント文
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    クラスのオプション
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    タイトルなどの出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    段落
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    見出し
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    目次
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    脚注
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    箇条書き
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    数式環境
+  </a>
+  
+    <nav class="md-nav" aria-label="数式環境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    テキストスタイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ディスプレイスタイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align" class="md-nav__link">
+    複数行（align 環境）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    図の挿入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    表の作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    相互参照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    参考文献
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial03/" class="md-nav__link">
+        初級編（卒業）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial04/" class="md-nav__link">
+        中級編（QOL向上編）
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        kaishi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="kaishi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          kaishi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaishi01/" class="md-nav__link">
+        kaishi チュートリアル
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaishi02/" class="md-nav__link">
+        kaishi の解説
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaishi03/" class="md-nav__link">
+        ksishi 完全に理解
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latexmk/" class="md-nav__link">
+        latexmk について
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Heroku
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Heroku" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Heroku
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/rails/" class="md-nav__link">
+        Rails for Heroku
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+    <nav class="md-nav" aria-label="はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    このチュートリアルの内容
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tex" class="md-nav__link">
+    tex用語・文書構成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    基本的な LaTeX コマンド
+  </a>
+  
+    <nav class="md-nav" aria-label="基本的な LaTeX コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コメント文
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    クラスのオプション
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    タイトルなどの出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    段落
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    見出し
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    目次
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    脚注
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    箇条書き
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    数式環境
+  </a>
+  
+    <nav class="md-nav" aria-label="数式環境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    テキストスタイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ディスプレイスタイル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align" class="md-nav__link">
+    複数行（align 環境）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    図の挿入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    表の作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    相互参照
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    参考文献
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/znuko/nukodocs/edit/master/docs/tex/tutorial02.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>初級編（後編）</h1>
+                
+                <h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h3 id="_2">このチュートリアルの内容<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<p>この LaTeX チュートリアル 初級編（後編）では、
+自分でレポートとかを LaTeX を使って作れるようになるレベルまで、最速で到達してもらいます。</p>
+<p>細かい説明はあえて省略していますが、最低限必要であろうコマンドは一通り説明しているつもりです。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>前回に引き続き、このページにあるサンプルコードは、
+<code>platex</code> + <code>dvipdfmx</code> を使ってタイプセットすることを想定して書いています。</p>
+</div>
+<h3 id="tex">tex用語・文書構成<a class="headerlink" href="#tex" title="Permanent link">#</a></h3>
+<p>texファイルからpdfファイルを生成することを「タイプセット」と言います。</p>
+<p>ここでは、texファイルの基本的な構成について説明します。</p>
+<p>以下のコードは、<code>Hello, LaTeX!</code> を出力するだけの最もシンプルなものです；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  Hello, LaTeX!
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>1行目の <code>\documentclass</code> は、文書のクラスを指定するコマンドです。</p>
+<p>文書のクラスとは、テーマのようなもので、記事や書籍、レポートなどのクラスがあらかじめ用意されています。
+上の例では <code>jsarticle</code> という和文記事の文書クラスを指定しています。</p>
+<table>
+<thead>
+<tr>
+<th>クラス名</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jsarticle</code></td>
+<td>和文記事</td>
+</tr>
+<tr>
+<td><code>jsbook</code></td>
+<td>和文書籍</td>
+</tr>
+<tr>
+<td><code>jsreport</code></td>
+<td>和文レポート</td>
+</tr>
+</tbody>
+</table>
+<p><code>\documentclass</code> の直後の <code>{ }</code> で、コマンドの引数として文書クラスの名前を与えています。</p>
+<p>2行目と4行目にあるような <code>\begin</code> と <code>\end</code> がセットになっているコマンドは一般に「環境」と呼ばれます。</p>
+<p>上の例にある <code>\begin{document}</code> ~ <code>\end{document}</code> は <code>document</code> 環境と呼ばれ、
+この環境の中に書いた文章が、pdfの内容として出力されます。</p>
+<p>つまり、上の例では、3行目に書いた <code>Hello, LaTeX!</code> がpdfに出力されるわけです。</p>
+<h2 id="latex">基本的な LaTeX コマンド<a class="headerlink" href="#latex" title="Permanent link">#</a></h2>
+<h3 id="_3">コメント文<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p>コメント文とは、タイプセットの際に無視される文のことです。</p>
+<p>コード中に <code>%</code> を書くと、以降の文が（改行されるまで）無視されます（コメントアウト）。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span> <span class="c">% class を指定</span>
+<span class="c">% メモなどを書いておけます</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="c">% \LaTeX &lt;- 無視</span>
+  Hello, LaTeX! <span class="c">% %以降は無視</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_4">クラスのオプション<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<p>クラスにはいくつかのオプションが用意されています。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>オプション引数とは、省略可能な引数のことです。
+省略した場合は、標準で設定されている値が適用されます。</p>
+<p>普通の引数は <code>{ }</code> で与えますが、オプション引数は <code>[ ]</code> で与えます。</p>
+</div>
+<p>例えば、フォントサイズを 12pt にするには、
+以下のようにして <code>\documentclass</code> コマンドにオプションを与えます；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>標準（デフォルト）のフォントサイズは 10pt です。
+何も指定しなければ、このサイズになります。</p>
+</div>
+<p>さらに、用紙サイズ（標準ではA4）を B5 に変更するには、
+<code>b5paper</code> と <code>papersize</code> を書き加えます；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt,b5paper,papersize]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>このチュートリアルでは platex でのタイプセットしか説明しませんが、
+platex をユニコード文字が使えるように拡張した uplatex というものもあります。</p>
+<p>uplatex を使ってタイプセットするには、クラスのオプションに <code>uplatex</code> を指定する必要があります；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[uplatex]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+</code></pre></div>
+</div>
+<h3 id="_5">タイトルなどの出力<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<p>文書のタイトルや著者名、日付などを出力するには <code>\maketitle</code> というコマンドを使います；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+
+<span class="k">\title</span><span class="nb">{</span>LaTeX チュートリアル<span class="nb">}</span> <span class="c">% タイトル</span>
+<span class="k">\author</span><span class="nb">{</span>物理太郎<span class="nb">}</span> <span class="c">% 著者</span>
+<span class="k">\date</span><span class="nb">{</span>2020年8月24日<span class="nb">}</span> <span class="c">% 日付</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\maketitle</span> <span class="c">% これで出力</span>
+  Hello, LaTeX!
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>3行目の <code>\title{}</code> コマンドに、引数として文書のタイトルを指定します。
+4行目の <code>\author{}</code> には著者名を、5行目の <code>\date{}</code> には日付を指定します。</p>
+<p>上の例では、日付を直接指定していますが <code>\date{\today}</code> と書けば、
+タイプセットしたときの日付を自動で指定することができます。</p>
+<p>あとは、document環境中に <code>\maketitle</code> と書けば、そこにタイトルなどが出力されます。</p>
+<p>出力されるタイトルなどのスタイルは、<code>\documentclass{}</code> で指定した文書のクラスに依存します。</p>
+<h3 id="_6">段落<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
+<p>段落を作るには、<code>\par</code> コマンドを使います；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  吾輩は猫である。名前はまだ無い。
+<span class="hll">  <span class="k">\par</span>
+</span>  どこで生れたかとんと見当けんとうがつかぬ。
+  何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+<span class="hll">  <span class="k">\par</span>
+</span>  続きはWebで。
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>あるいは、文中に空行を入れることでも、段落が作られます；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  吾輩は猫である。名前はまだ無い。
+<span class="hll">
+</span>  どこで生れたかとんと見当けんとうがつかぬ。
+  何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+<span class="hll">
+</span>  続きはWebで。
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>文章の区切りには、段落コマンド <code>\par</code> を使いましょう。</p>
+<p>くれぐれも、ただの改行でしかない <code>\\</code> コマンドを使わないように。</p>
+</div>
+<h3 id="_7">見出し<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
+<p>見出しは <code>\section{}</code> というコマンドで出力することができます。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\section*</span><span class="nb">{</span>はじめに<span class="nb">}</span> <span class="c">% 章番号なし</span>
+  Hello, LaTeX!
+
+  <span class="k">\section</span><span class="nb">{</span>テーラー展開<span class="nb">}</span> <span class="c">% 節</span>
+  <span class="k">\subsection</span><span class="nb">{</span>三角関数<span class="nb">}</span> <span class="c">% 小節</span>
+  サイン、コサイン、タンジェント。
+
+  <span class="k">\subsection</span><span class="nb">{</span>指数関数<span class="nb">}</span> <span class="c">% 小節</span>
+  指数関数は、、、
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>章番号は、順に自動で出力されます。
+章番号を出力したくない場合は、代わりに <code>\section*{}</code>というコマンドを使います。</p>
+<p>小節の出力には <code>\subsection{}</code>、さらには <code>\subsubsection{}</code> が用意されています。</p>
+<p>章立ても文書クラスに依存します。</p>
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>説明</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\part{}</code></td>
+<td>部</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\chapter{}</code></td>
+<td>章</td>
+<td><code>jsarticle</code> クラスでは使用不可</td>
+</tr>
+<tr>
+<td><code>\section{}</code></td>
+<td>節</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\subsection{}</code></td>
+<td>小節</td>
+<td></td>
+</tr>
+<tr>
+<td><code>\subsubsection{}</code></td>
+<td>小々節</td>
+<td><code>jsbook</code>, <code>jsreport</code> クラスでは番号なし</td>
+</tr>
+<tr>
+<td><code>\paragraph{}</code></td>
+<td>段落</td>
+<td>番号なし</td>
+</tr>
+<tr>
+<td><code>\subparagraph{}</code></td>
+<td>小段落</td>
+<td>番号なし</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>余程大規模な文書でない限りは、<code>\section</code> から始めれば十分です。
+book クラスの場合は <code>\chapter</code> から始めましょう。</p>
+</div>
+<h3 id="_8">目次<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
+<p>目次を作成するには、<code>\tableofcontents</code> コマンドを使用します；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="hll">  <span class="k">\tableofcontents</span> <span class="c">% 目次出力</span>
+</span>  <span class="k">\section*</span><span class="nb">{</span>はじめに<span class="nb">}</span>
+  <span class="k">\section</span><span class="nb">{</span>てすてす<span class="nb">}</span>
+    <span class="k">\subsection</span><span class="nb">{</span>てすー<span class="nb">}</span>
+      <span class="k">\subsubsection</span><span class="nb">{</span>テスっと<span class="nb">}</span>
+    <span class="k">\subsection</span><span class="nb">{</span>テスト<span class="nb">}</span>
+  <span class="k">\section</span><span class="nb">{</span>てすてす<span class="nb">}</span>
+    <span class="k">\subsection</span><span class="nb">{</span>てすー<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><code>\setcounter{tocdepth}{深さ}</code> で、目次に表示する見出しの深さを指定できます；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="hll">  <span class="k">\setcounter</span><span class="nb">{</span>tocdepth<span class="nb">}{</span>3<span class="nb">}</span> <span class="c">% 深さ指定</span>
+</span>  <span class="k">\tableofcontents</span> <span class="c">% 目次出力</span>
+  <span class="k">\section</span><span class="nb">{</span>はじめに<span class="nb">}</span>
+  ...
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<table>
+<thead>
+<tr>
+<th>深さ</th>
+<th>表示される見出し</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-1</code></td>
+<td>部 <code>\part</code> のみ</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>章 <code>\chapter</code> まで</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>節 <code>\section</code> まで</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>小節 <code>\subsection</code> まで（デフォルト）</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>小々節 <code>\subsubsection</code> まで</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">脚注<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
+<p>脚注を出力するには、次のように書きます；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  吾輩は猫<span class="k">\footnote</span><span class="nb">{</span>食肉目ネコ科ネコ属<span class="nb">}</span>である。
+  名前はまだ無い<span class="k">\footnote</span><span class="nb">{</span>ちなみに、著者の名前は夏目漱石である。<span class="nb">}</span>。
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>文末に脚注を付ける際は、<code>\footnote</code> コマンドは句点の前に入れるのが常識。</p>
+</div>
+<h3 id="_10">箇条書き<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
+<p>箇条書きをするには、<code>itemize</code> 環境を使用します；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\item</span> りんご
+  <span class="k">\item</span> ぶどう
+  <span class="k">\item</span> メロン
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</code></pre></div>
+<p><code>enumerate</code> 環境を使えば、リストに番号を付けられます；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> とまと
+  <span class="k">\item</span> キャベツ
+  <span class="k">\item</span> じゃがいも
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></div>
+<p>入れ子にもできます；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> くだもの
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> りんご
+    <span class="k">\item</span> ぶどう
+    <span class="k">\item</span> メロン
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> やさい
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> とまと
+    <span class="k">\item</span> キャベツ
+    <span class="k">\item</span> じゃがいも
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></div>
+<p>番号の書式は、ローマ数字やアルファベットにも変更できます；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="hll">  <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumi</span><span class="nb">}{</span>(<span class="k">\roman</span><span class="nb">{</span>enumi<span class="nb">}</span>)<span class="nb">}</span> <span class="c">% 1段目の書式</span>
+</span><span class="hll">  <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumii</span><span class="nb">}{</span><span class="k">\Alph</span><span class="nb">{</span>enumii<span class="nb">}</span>.<span class="nb">}</span> <span class="c">% 2段目の書式</span>
+</span>  <span class="k">\item</span> くだもの
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> りんご
+    <span class="k">\item</span> ぶどう
+    <span class="k">\item</span> メロン
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> やさい
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> とまと
+    <span class="k">\item</span> キャベツ
+    <span class="k">\item</span> じゃがいも
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>書式</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\arabic</code></td>
+<td>アラビア数字</td>
+<td>1, 2, 3, ...</td>
+</tr>
+<tr>
+<td><code>\roma</code></td>
+<td>小文字のローマ数字</td>
+<td>i, ii, iii, ...</td>
+</tr>
+<tr>
+<td><code>\Roma</code></td>
+<td>大文字のローマ数字</td>
+<td>I, II, III, ...</td>
+</tr>
+<tr>
+<td><code>\ahph</code></td>
+<td>小文字のアルファベット</td>
+<td>a, b, c, ...</td>
+</tr>
+<tr>
+<td><code>\Alph</code></td>
+<td>大文字のアルファベット</td>
+<td>A, B, C, ...</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>番号の書式を文書全体に適用したいなら、
+<code>\renewcommand{\labelenumi}{(\roman{enumi})}</code> プリアンブルに書けばよい。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>\renewcommand{\AAA}{BBB}</code> は、<code>\AAA</code> というコマンドを <code>BBB</code> という内容で再定義する、というコマンド。</p>
+</div>
+<h3 id="_11">数式環境<a class="headerlink" href="#_11" title="Permanent link">#</a></h3>
+<h4 id="_12">テキストスタイル<a class="headerlink" href="#_12" title="Permanent link">#</a></h4>
+<p>文中で数式を使うときはドル記号 <code>$</code> で囲みます；</p>
+<div class="highlight"><pre><span></span><code>これは運動方程式 <span class="s">$</span><span class="nb">F </span><span class="o">=</span><span class="nb"> ma</span><span class="s">$</span> です。
+</code></pre></div>
+<h4 id="_13">ディスプレイスタイル<a class="headerlink" href="#_13" title="Permanent link">#</a></h4>
+<p>中央にデカデカと出力するときは、ドル記号2つ <code>$$</code> で囲みます；</p>
+<div class="highlight"><pre><span></span><code><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">F </span><span class="o">=</span><span class="nb"> m </span><span class="nv">\frac</span><span class="nb">{dv}{dt}</span>
+<span class="s">$$</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>\frac{分子}{分母}</code> は、数式環境中で分数を出力するコマンドです。</p>
+</div>
+<h4 id="align">複数行（align 環境）<a class="headerlink" href="#align" title="Permanent link">#</a></h4>
+<p>ディスプレイスタイルの数式環境中で、数式を途中で改行するには、
+<code>amsmath.sty</code> というスタイルファイルで定義された <code>align</code> 環境を使います。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>標準の LaTeX で用意されている数式環境（<code>eqnarray</code> 環境とか）もありますが、
+このチュートリアルでは amsmath の align 環境に統一して使っていくことにします。</p>
+</div>
+<p><code>align</code> 環境は、標準のLaTeXでは定義されていないので、
+数学用のマクロ集である <code>amsmath</code> パッケージをロードする必要があります。</p>
+<p>スタイルファイルのロードは、tex 文書中の「プリアンブル」と呼ばれる領域
+（<code>\documentclass{}</code> と <code>\begin{document}</code> の間）に、
+<code>\usepackage{}</code> というコマンドを書くことで行うことができます；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+
+<span class="c">% ここがプリアンブル</span>
+<span class="hll"><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  amsmath.sty で定義されている align 環境が使えます。
+  <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+    z <span class="nb">&amp;</span>= x + iy<span class="k">\\</span>
+      <span class="nb">&amp;</span>= r (<span class="k">\cos</span> <span class="k">\theta</span> + i<span class="k">\sin</span> <span class="k">\theta</span>)
+  <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><code>align</code> 環境の中で <code>\\</code> を書くと、そこで数式が改行されます。</p>
+<p>改行した数式の位置を揃えるには、揃えたい場所に <code>&amp;</code> を書きます。
+上の例では、イコール <code>=</code> の位置で揃えるようにしています。</p>
+<p><code>align</code> 環境は自動で式番号を出力しますが、
+式番号を出力したくない場合は、代わりに <code>align*</code> 環境を使うか、
+<code>\notag</code> というコマンドを使います；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  align 環境では各行の式番号を出力。
+  <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+    z <span class="nb">&amp;</span>= x + iy<span class="k">\\</span>
+      <span class="nb">&amp;</span>= r (<span class="k">\cos</span> <span class="k">\theta</span> + i<span class="k">\sin</span> <span class="k">\theta</span>)
+  <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+
+  align* 環境では式番号を出力しない。
+  <span class="k">\begin</span><span class="nb">{</span>align*<span class="nb">}</span>
+    z <span class="nb">&amp;</span>= x + iy<span class="k">\\</span>
+      <span class="nb">&amp;</span>= r (<span class="k">\cos</span> <span class="k">\theta</span> + i<span class="k">\sin</span> <span class="k">\theta</span>)
+  <span class="k">\end</span><span class="nb">{</span>align*<span class="nb">}</span>
+
+  notag コマンドを使えば、行単位で非表示にできる。
+  <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+    z <span class="nb">&amp;</span>= x + iy <span class="k">\notag</span> <span class="k">\\</span>
+      <span class="nb">&amp;</span>= r (<span class="k">\cos</span> <span class="k">\theta</span> + i<span class="k">\sin</span> <span class="k">\theta</span>)
+  <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_14">図の挿入<a class="headerlink" href="#_14" title="Permanent link">#</a></h3>
+<p>まずは、挿入したい図や画像を用意し、texファイルのあるディレクトリに配置します。</p>
+<div class="highlight"><pre><span></span><code>test.tex
+fig01.png
+</code></pre></div>
+<p>画像を挿入するには、<code>graphicx</code> パッケージを使用します。</p>
+<p><code>\includegraphics</code> コマンドで <code>fig01.png</code> を読み込みます；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[dvipdfmx]</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>fig01.png<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p><code>graphicx</code> パッケージを読み込む際、<code>dvipdfmx</code> オプションを与えます。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>ドライバの指定は、グローバルオプションで与えることもできます。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="hll"><span class="k">\documentclass</span><span class="na">[dvipdfmx]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+</span><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>fig01.png<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<p>挿入する画像の出力サイズは、<code>\includegraphics</code> のオプション引数で与えます。
+上の例では、横幅（<code>width</code>）が <code>5cm</code> となるように画像を挿入しています。</p>
+<p>画像サイズの指定は、横幅 <code>width</code> の代わりに、高さ <code>height</code> で指定することもできます。
+大きさの単位は <code>cm</code>, <code>mm</code>, <code>pt</code> など、いろいろ使えます。</p>
+<p>画像を中央寄せするには <code>center</code> 環境を使用します；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+  <span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>fig01.png<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</code></pre></div>
+<p>キャプションを付けるには、<code>figure</code> 環境を使用します；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+  <span class="k">\centering</span>
+  <span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>fig01.png<span class="nb">}</span>
+  <span class="k">\caption</span><span class="nb">{</span>素晴らしい図<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre></div>
+<p><code>htbp</code> というオプションは、図を挿入する位置を指定しています。
+左に書いたもの程、優先度が高いです。</p>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h</code></td>
+<td>ソースコード通りの位置 (here)</td>
+</tr>
+<tr>
+<td><code>t</code></td>
+<td>ページの上部 (top)</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>ページの下部 (bottom)</td>
+</tr>
+<tr>
+<td><code>p</code></td>
+<td>別ページに単独で (page)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">表の作成<a class="headerlink" href="#_15" title="Permanent link">#</a></h3>
+<p>表を作成するには、<code>tabular</code> 環境を使用します；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>rcl<span class="nb">}</span>
+    <span class="k">\hline\hline</span>
+    野菜 <span class="nb">&amp;</span> 色 <span class="nb">&amp;</span> 味<span class="k">\\</span>
+    <span class="k">\hline</span>
+    トマト <span class="nb">&amp;</span> 赤 <span class="nb">&amp;</span> 酸っぱい<span class="k">\\</span>
+    キャベツ <span class="nb">&amp;</span> 緑 <span class="nb">&amp;</span> 無味<span class="k">\\</span>
+    じゃがいも <span class="nb">&amp;</span> 茶色 <span class="nb">&amp;</span> 美味しい<span class="k">\\</span>
+    <span class="k">\hline\hline</span>
+  <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>上の例では、4行3列の表を出力しています。</p>
+<p>列は <code>&amp;</code> で区切り、<code>\\</code> で行を改めます。</p>
+<p><code>\hline</code> は、行方向に線を引くコマンドです。
+2つ重ねると、2本の線を引きます。</p>
+<p><code>\begin{tabular}</code> の直後にある引数には、各列の位置を指定します。
+3列の表を作るなら、3文字を指定します。</p>
+<table>
+<thead>
+<tr>
+<th>引数</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>l</code></td>
+<td>左寄せ</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>中央寄せ</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>右寄せ</td>
+</tr>
+</tbody>
+</table>
+<p>キャプションを付けるには、<code>table</code> 環境を使用します；</p>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
+  <span class="k">\centering</span>
+  <span class="k">\caption</span><span class="nb">{</span>野菜リスト<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>rcl<span class="nb">}</span>
+    <span class="k">\hline\hline</span>
+    野菜 <span class="nb">&amp;</span> 色 <span class="nb">&amp;</span> 味<span class="k">\\</span>
+    <span class="k">\hline</span>
+    トマト <span class="nb">&amp;</span> 赤 <span class="nb">&amp;</span> 酸っぱい<span class="k">\\</span>
+    キャベツ <span class="nb">&amp;</span> 緑 <span class="nb">&amp;</span> 無味<span class="k">\\</span>
+    じゃがいも <span class="nb">&amp;</span> 茶色 <span class="nb">&amp;</span> 美味しい<span class="k">\\</span>
+    <span class="k">\hline\hline</span>
+  <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>図のキャプションは図の下に付け、
+表のキャプションは表の上に付けるのが常識です。</p>
+</div>
+<h3 id="_16">相互参照<a class="headerlink" href="#_16" title="Permanent link">#</a></h3>
+<p>数式や図表にラベルを付け、式番号や図・表番号を参照することができます。</p>
+<p><code>\label{}</code> でラベルを付け、<code>\ref{}</code> で参照します；</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[dvipdfmx]</span><span class="nb">{</span>jsarticle<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+    f(x) = <span class="k">\sin</span> x
+<span class="hll">    <span class="k">\label</span><span class="nb">{</span>eq:sin<span class="nb">}</span>
+</span>  <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+
+<span class="hll">  (<span class="k">\ref</span><span class="nb">{</span>eq:sin<span class="nb">}</span>)式をプロットすると、図<span class="k">\ref</span><span class="nb">{</span>fig:sin<span class="nb">}</span>のようになります。
+</span>
+  <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+    <span class="k">\centering</span>
+    <span class="k">\includegraphics</span><span class="na">[width=5cm]</span><span class="nb">{</span>fig01.png<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>素晴らしい図<span class="nb">}</span>
+<span class="hll">    <span class="k">\label</span><span class="nb">{</span>fig:sin<span class="nb">}</span>
+</span>  <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+  さいごに、野菜のリストを表<span class="k">\ref</span><span class="nb">{</span>tab:vegetable<span class="nb">}</span>に示します。
+
+  <span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[htbp]
+    <span class="k">\centering</span>
+    <span class="k">\caption</span><span class="nb">{</span>野菜リスト<span class="nb">}</span>
+    <span class="k">\label</span><span class="nb">{</span>tab:vegetable<span class="nb">}</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>rcl<span class="nb">}</span>
+      <span class="k">\hline\hline</span>
+      野菜 <span class="nb">&amp;</span> 色 <span class="nb">&amp;</span> 味<span class="k">\\</span>
+      <span class="k">\hline</span>
+      トマト <span class="nb">&amp;</span> 赤 <span class="nb">&amp;</span> 酸っぱい<span class="k">\\</span>
+      キャベツ <span class="nb">&amp;</span> 緑 <span class="nb">&amp;</span> 無味<span class="k">\\</span>
+      じゃがいも <span class="nb">&amp;</span> 茶色 <span class="nb">&amp;</span> 美味しい<span class="k">\\</span>
+      <span class="k">\hline\hline</span>
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>目次の作成や相互参照を利用するには <code>platex</code> コマンドを2回実行する必要があります。
+1回目のタイプセットで参照情報を記した <code>aux</code> ファイルを生成し、2回目にそれが読み込まれます。</p>
+<p><code>latexmk</code> を使用すれば、1回のコマンド実行で、必要な数だけ自動で <code>platex</code> が実行されるので、
+ユーザがタイプセット改数を気にする必要はありません。</p>
+</div>
+<h3 id="_17">参考文献<a class="headerlink" href="#_17" title="Permanent link">#</a></h3>
+<p>参考文献は、<code>thebibliography</code> 環境で出力します；</p>
+<div class="highlight"><pre><span></span><code>参考文献<span class="k">\cite</span><span class="nb">{</span>test2020<span class="nb">}</span>より、、、
+
+<span class="k">\begin</span><span class="nb">{</span>thebibliography<span class="nb">}{</span>99<span class="nb">}</span>
+  <span class="k">\bibitem</span><span class="nb">{</span>test2020<span class="nb">}</span> 著者名、『書籍名』、出版社、出版年。
+  <span class="k">\bibitem</span><span class="nb">{</span>simizu2004<span class="nb">}</span> 清水明，『新版 量子論の基礎』，サイエンス社，2004．
+<span class="k">\end</span><span class="nb">{</span>thebibliography<span class="nb">}</span>
+</code></pre></div>
+<p><code>\bibitem{}</code> の引数で、文献のラベルを指定します。</p>
+<p>本文中で参照するには <code>\cite{}</code> を使います。</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      最終更新日: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">July 12, 2021 08:12:48</span>
+      
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+  <h2 id="__comments">コメント</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="https://znuko.github.io/nukodocs/tex/tutorial02/",this.page.identifier="tex/tutorial02/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//mkdocs-test-1.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../tutorial01/" class="md-footer__link md-footer__link--prev" aria-label="前: 初級編（前編）" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              初級編（前編）
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../tutorial03/" class="md-footer__link md-footer__link--next" aria-label="次: 初級編（卒業）" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              初級編（卒業）
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 znuko
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/nukoyama" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/geniusium_" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+  
+  
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+        <script src="../../assets/js/mathjax3-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+    
+
+  
+  
+
+  </body>
+</html>

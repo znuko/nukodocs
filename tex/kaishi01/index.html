@@ -1,0 +1,2019 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documents for znuko">
+      
+      
+      
+        <meta name="author" content="nukoyama">
+      
+      
+        <link rel="canonical" href="https://znuko.github.io/nukodocs/tex/kaishi01/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+  
+
+  
+  <title>kaishi チュートリアル - LaTeX | nukoDocs</title>
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../assets/css/header-awesome.css">
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-165061642-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="nukoDocs" class="md-header__button md-logo" aria-label="nukoDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            nukoDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              kaishi チュートリアル
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/znuko/nukodocs/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    znuko/nukodocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../mkdocs/" class="md-tabs__link">
+        MkDocs
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../jekyll/" class="md-tabs__link">
+        Jekyll
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tutorial01/" class="md-tabs__link md-tabs__link--active">
+        LaTeX
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../heroku/" class="md-tabs__link">
+        Heroku
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="nukoDocs" class="md-nav__button md-logo" aria-label="nukoDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    nukoDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/znuko/nukodocs/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    znuko/nukodocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/" class="md-nav__link">
+        にゃんこぺーじ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
+      
+      <label class="md-nav__link" for="__nav_1_4">
+        sub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="sub" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          sub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/1-test/" class="md-nav__link">
+        test 11
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/2-test/" class="md-nav__link">
+        test 2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/3-test/" class="md-nav__link">
+        test 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4_4" checked>
+      
+      <label class="md-nav__link" for="__nav_1_4_4">
+        subsub
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="subsub" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          subsub
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/3-test/" class="md-nav__link">
+        test 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/4-test/" class="md-nav__link">
+        test 4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sub/subsub/5-test/" class="md-nav__link">
+        second
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        MkDocs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MkDocs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          MkDocs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/develop/" class="md-nav__link">
+        Develop
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/issue/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/extension/" class="md-nav__link">
+        Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/plugin/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/custom-css/" class="md-nav__link">
+        Customize CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/custom-theme/" class="md-nav__link">
+        Customize Theme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/math/" class="md-nav__link">
+        MathJax
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Jekyll
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Jekyll" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Jekyll
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jekyll/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jekyll/kramdown/" class="md-nav__link">
+        Kramdown
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        LaTeX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LaTeX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" data-md-state="indeterminate" type="checkbox" id="__nav_4_1" checked>
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        LaTeX Tutorial
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="LaTeX Tutorial" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial01/" class="md-nav__link">
+        初級編（前編）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial02/" class="md-nav__link">
+        初級編（後編）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial03/" class="md-nav__link">
+        初級編（卒業）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial04/" class="md-nav__link">
+        中級編（QOL向上編）
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        kaishi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="kaishi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          kaishi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          kaishi チュートリアル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        kaishi チュートリアル
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    そもそも
+  </a>
+  
+    <nav class="md-nav" aria-label="そもそも">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    LaTeX のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    vscode のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    GitHub のアカウント作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github_desktop" class="md-nav__link">
+    GitHub Desktop のインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    会誌の作成
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌の作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    会誌リポジトリのクローン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    自分の記事の作成
+  </a>
+  
+    <nav class="md-nav" aria-label="自分の記事の作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    自分の作業 Branch を作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch_1" class="md-nav__link">
+    作成した Branch をリモートへ反映
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    自分の作業ディレクトリを作成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeset-with-vscode" class="md-nav__link">
+    会誌のタイプセット（vscode）
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌のタイプセット（vscode）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    設定ファイルの配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    タイプセット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    会誌記事の編集・コミット
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌記事の編集・コミット">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    記事の編集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    変更内容を Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch_pull" class="md-nav__link">
+    Fetch &amp; Pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    派生元ブランチの変更を取り入れる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull_request" class="md-nav__link">
+    Pull Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    会誌の編集手順まとめ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    会誌記事を書くときの注意点（ルール）
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌記事を書くときの注意点（ルール）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    プリアンブル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    会誌のタイトル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    目次
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    見出し
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    参考文献
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    おわりに
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaishi02/" class="md-nav__link">
+        kaishi の解説
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaishi03/" class="md-nav__link">
+        ksishi 完全に理解
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_3">
+        Others
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latexmk/" class="md-nav__link">
+        latexmk について
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Heroku
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Heroku" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Heroku
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../heroku/rails/" class="md-nav__link">
+        Rails for Heroku
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    そもそも
+  </a>
+  
+    <nav class="md-nav" aria-label="そもそも">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    LaTeX のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    vscode のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    GitHub のアカウント作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github_desktop" class="md-nav__link">
+    GitHub Desktop のインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    会誌の作成
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌の作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    会誌リポジトリのクローン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    自分の記事の作成
+  </a>
+  
+    <nav class="md-nav" aria-label="自分の記事の作成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    自分の作業 Branch を作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branch_1" class="md-nav__link">
+    作成した Branch をリモートへ反映
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    自分の作業ディレクトリを作成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typeset-with-vscode" class="md-nav__link">
+    会誌のタイプセット（vscode）
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌のタイプセット（vscode）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    設定ファイルの配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    タイプセット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    会誌記事の編集・コミット
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌記事の編集・コミット">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    記事の編集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    変更内容を Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch_pull" class="md-nav__link">
+    Fetch &amp; Pull
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    派生元ブランチの変更を取り入れる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pull_request" class="md-nav__link">
+    Pull Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    会誌の編集手順まとめ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    会誌記事を書くときの注意点（ルール）
+  </a>
+  
+    <nav class="md-nav" aria-label="会誌記事を書くときの注意点（ルール）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    プリアンブル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    会誌のタイトル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    目次
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    見出し
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    参考文献
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    おわりに
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/znuko/nukodocs/edit/master/docs/tex/kaishi01.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>kaishi チュートリアル</h1>
+                
+                <h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>このページでは、会誌（kaishi）で自分の記事を書くための手順を <strong>簡潔に</strong> 述べます。</p>
+<p>会誌はもちろん LaTeX を使って書いてもらいます。</p>
+<p>2020年度の会誌のリポジトリです；</p>
+<ul>
+<li><a href="https://github.com/vuccaken/kaishi2020" target="_blank">vuccaken/kaishi2020 - GitHub</a></li>
+</ul>
+<h2 id="_2">そもそも<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>まず前提として、次の3つを自分のPCにインストールしてください；</p>
+<ul>
+<li>LaTeX（TeX Live）</li>
+<li>vscode（エディタ）</li>
+<li>GitHub Desktop（Git の GUI アプリ）</li>
+</ul>
+<p>以下で簡単に説明します。</p>
+<h3 id="latex">LaTeX のインストール<a class="headerlink" href="#latex" title="Permanent link">#</a></h3>
+<p>会誌は Word じゃなくて LaTeX で書いてもらいます。</p>
+<p><a href="../tutorial01/#pc">この記事</a>
+に従って、LaTeX をインストールしてください。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>今どきはクラウドの時代で、LaTeX においても <a href="https://www.overleaf.com" target="_blank">Overleaf</a> という Web サービスを利用することで、わざわざ自分の PC に LaTeX をインストールしないでも、オンライン上で LaTeX の文書の編集・タイプセットが無料で行えるのですが、Overleaf を GitHub と連携して利用するためには有料プランに加入しなくてはならず、我々はケチケチとオフラインでてふてふすることを基本としました。</p>
+</div>
+<h3 id="vscode">vscode のインストール<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
+<p>Visual Studio Code（略して vscode）は、Microsoft製のエディタです。</p>
+<p>エディタは何でもいいのですが、各々の環境に合わせて設定（を説明）するのは面倒なので、
+とくにこだわりのない人は全員 vscode を使ってください。</p>
+<p><a href="../tutorial01/#vscode">この記事</a>
+に従って、vscode と、その拡張機能「LaTeX Workshop」をインストールしてください。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>コマンドラインからのタイプセット方法は<a href="../kaishi02/#typeset">次の記事</a>で説明しています。</p>
+</div>
+<h3 id="github">GitHub のアカウント作成<a class="headerlink" href="#github" title="Permanent link">#</a></h3>
+<p>詳しくは説明しませんが、ファイルのバージョン管理ツールとして「Git」というものがあります。</p>
+<p>会誌の作成では、Git を利用したサービスのひとつである「<a href="https://github.com" target="_blank">GitHub</a>」を利用します。</p>
+<p>GitHub というWebサービスを利用することで、会誌の共同開発が可能になります。</p>
+<p>まずは、<a href="https://github.com">GitHub のサイト</a> に飛んでもらって、
+各自アカウントを作成してください。</p>
+<p>自分のアカウントが作成できたら、<a href="https://github.com/vuccaken" target="_blank">物科研の Organization</a> に参加してもらいます。</p>
+<p>既に参加済みの人に、自分の GitHub アカウントを教えて、招待してもらってください。</p>
+<h3 id="github_desktop">GitHub Desktop のインストール<a class="headerlink" href="#github_desktop" title="Permanent link">#</a></h3>
+<p>Git の CUI（コマンドライン）での操作は初心者には大変なので、
+GUI アプリの「<a href="https://desktop.github.com" target="_blank">GitHub Desktop</a>」
+を利用することにします。</p>
+<p>下記リンクから GitHub Desktop をインストールしてください；</p>
+<ul>
+<li><a href="https://desktop.github.com">GitHub Desktop | Simple collaboration from your desktop</a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>GitHub を利用するには、まず Git がインストール済みである必要があります。<br />
+Mac では標準で Git がインストール済みですが、Windows ではそうではありません。<br />
+しかし、GitHub Desktop に Git が付属しているらしいので、結局気にしなくてよいです。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>デフォルトのエディタを vscode に設定しておくとよいです。</p>
+</div>
+<h2 id="_3">会誌の作成<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h3 id="_4">会誌リポジトリのクローン<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<p>GitHub にある本年度の会誌を丸ごと自分のPCにクローン（ダウンロード＆git管理）します。</p>
+<p><a href="https://github.com/vuccaken/kaishi2020" target="_blank">会誌のリポジトリ</a> へアクセスし、
+「Code」と書いてある緑色のボタンをクリックし、「Open with GitHub Desktop」を選択します。</p>
+<p><img alt="" src="../img/github_clone.png" /></p>
+<p>GitHub Desktop で開いたら、「Local Path」を好きな所に設定して、リポジトリをクローンします。</p>
+<p>以上で、自分のPC内で会誌を編集することができるようになりました。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>既に GitHub Desktop アプリをインストールしているにも関わらず、GitHubで「Open with GitHub Desktop」をクリックしても、GitHub Desktop アプリが自動で開かない場合は、GitHub Desktop アプリの方から直接リポジトリをクローンします。</p>
+<p><a href="https://github.com/vuccaken/kaishi2020" target="_blank">会誌のリポジトリ</a>を開き、「Code」ボタンをクリックして表示されるURLをコピーします。</p>
+<p>次に、GitHub Desktop アプリを開いて、上部左の「Current Repository」をクリックします。
+「Add」ボタンをクリックして「Clone Repository...」を選択します。</p>
+<p>表示されたポップアップで右側の「URL」タブを開いて、上の入力欄に先ほどコピーしたURLを貼り付けます。
+下の「Local Path」を好きなところに設定し「Clone」ボタンを押してクローンします。</p>
+</div>
+<h3 id="_5">自分の記事の作成<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<p>まず、テキトーに自分の名前を決めましょう（以下、<code>&lt;NAME&gt;</code> とする）。
+他人と識別さえできれば何でもいいです。
+あとでファイル名などに使用します。</p>
+<p>例えば、<code>nkym</code> とか <code>Crazy_Apple</code> とか <code>kasumin0123</code> とかで、使える文字はアルファベットか数字ぐらいです。
+無難に苗字のローマ字でいいです。</p>
+<p>次に GitHub Desktop アプリを開いて</p>
+<h4 id="branch">自分の作業 Branch を作成<a class="headerlink" href="#branch" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Git には Branch と呼ばれる機能があります。
+あるプロジェクトから分岐させる（Branchを作る）ことで、そのプロジェクトとは独立に開発を進めることができます。
+複数人での並行作業において、ファイル編集の競合（Conflict）が起こりにくくするために利用します。</p>
+</div>
+<p>GitHub Desktop で会誌のリポジトリを開きます。</p>
+<p><img alt="" src="../img/github_desktop01.png" /></p>
+<p>ウインドウ上部中央にある「Current Branch」をクリックし、
+<code>develop</code> ブランチを選択します。
+これで、 <code>develop</code> ブランチへ移動（チェックアウト）できました。</p>
+<p>Current Branch が <code>develop</code> になっていることが確認できたら、
+もう一度「Current Branch」をクリックして、今度は「New Branch」ボタンをクリックします。</p>
+<p><img alt="" src="../img/github_desktop_new_branch.png" /></p>
+<p>「Name」には、さっき決めた自分の名前を <code>&lt;NAME&gt;</code> として、次のような名前でブランチ名を入力します；</p>
+<div class="highlight"><pre><span></span><code>feature-article-&lt;NAME&gt;
+</code></pre></div>
+<p>「Create branch based on...」は <code>master</code> ではなく <code>develop</code> ブランチを選択してください。</p>
+<p>「Create Branch」ボタンを押して、新しいブランチを作成します。</p>
+<p>以後、このブランチが、自分の記事を編集する作業ブランチとなります。</p>
+<p>記事更新の作業する際は、「Current Branch」が <code>master</code> や <code>develop</code> ではなく、
+自分の作業ブランチ <code>feature-article-&lt;NAME&gt;</code> になっていることを確認してください。</p>
+<h4 id="branch_1">作成した Branch をリモートへ反映<a class="headerlink" href="#branch_1" title="Permanent link">#</a></h4>
+<p>先ほど作成したブランチはまだローカルにしか存在していません。</p>
+<p>リモートリポジトリにも反映させるためには、上部右上の「Publish branch」ボタンをクリックします。</p>
+<p><img alt="" src="../img/github_desktop_publish_branch.png" /></p>
+<p>これでリモートのGitHubにあるリポジトリ上でも、ブランチが作成されました。</p>
+<h4 id="_6">自分の作業ディレクトリを作成<a class="headerlink" href="#_6" title="Permanent link">#</a></h4>
+<p>これからの作業は、自分の作業ブランチ <code>feature-article-&lt;NAME&gt;</code> で行いましょう。</p>
+<p>まずは、自分の会誌記事を入れておく作業ディレクトリを作成します。</p>
+<p>クローンした会誌のリポジトリを vscode で開きます。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>GitHub Desktop アプリでリポジトリを表示し</p>
+<ul>
+<li><code>cmd + shift + A</code> (mac)</li>
+<li><code>ctrl + shift + A</code> (windows)</li>
+</ul>
+<p>のキーバインドを入力すれば、自動でリポジトリをデフォルトで設定したエディタで開いてくれます。</p>
+</div>
+<p><img alt="" src="../img/vscode01.png" /></p>
+<p>kaishi の <code>/tex/</code> ディレクトリ以下に、自分の名前でディレクトリを作成します；</p>
+<div class="highlight"><pre><span></span><code>/tex/
+  |- _BK
+  |- ...
+<span class="hll">  |- &lt;NAME&gt;/
+</span>  ...
+</code></pre></div>
+<p>次に、その中に同じ名前（<code>&lt;NAME&gt;</code>）で tex ファイルと sty ファイルを作成します；</p>
+<div class="highlight"><pre><span></span><code>/tex/
+  |- _BK
+  |- ...
+  |- &lt;NAME&gt;/
+<span class="hll">  |   |- &lt;NAME&gt;.sty
+</span><span class="hll">  |   `- &lt;NAME&gt;.tex
+</span>  ...
+</code></pre></div>
+<p>さらに、画像を入れておくディレクトリ <code>img/</code> を作成します；</p>
+<div class="highlight"><pre><span></span><code>/tex/
+  |- _BK
+  |- ...
+  |- &lt;NAME&gt;/
+<span class="hll">  |   |- img/
+</span>  |   |- &lt;NAME&gt;.sty
+  |   `- &lt;NAME&gt;.tex
+  ...
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>vscode では、左のツリービューで表示されているディレクトリを右クリックすれば、新規ファイルやディレクトリの作成ができます。</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code>.gitignore</code> の設定で、<code>/tex/*/</code> の階層にある pdf ファイルは無視するようにしているので、
+記事に挿入するために用意した pdf をそこに直置きしてしまうと、リモートにはアップロードしてくれません。</p>
+<p>なので、名前は何でもいいので、サブディレクトリ <code>img/</code> を作成し、その中に画像ファイルを入れてください。</p>
+</div>
+<p>最後に、<code>/tex/_template/template.tex</code> の内容を丸々コピーしてきて、作成した自分の tex ファイルにペーストします。</p>
+<p>プリアンブルの <code>\usepackage{template}</code> のところを、
+自分の sty ファイル名 <code>\usepackage{&lt;NAME&gt;}</code> に変更してください。</p>
+<h3 id="typeset-with-vscode">会誌のタイプセット（vscode）<a class="headerlink" href="#typeset-with-vscode" title="Permanent link">#</a></h3>
+<h4 id="_7">設定ファイルの配置<a class="headerlink" href="#_7" title="Permanent link">#</a></h4>
+<p>タイプセットは vscode で行います。</p>
+<p>はじめに、vscode の設定ファイルを配置します。</p>
+<p><code>/etc/</code> ディレクトリにある <code>.vscode/settings.json</code> という設定ファイルを、
+一番上の階層（<code>merge.tex</code> と同じ階層）に配置（コピペ）します。</p>
+<div class="highlight"><pre><span></span><code>kaishi/
+<span class="hll">  |- .vscode/settings.json     % ここに配置
+</span>  |- ect/
+  |   `- .vscode/settings.json % これをコピー
+  |- fonts/
+  |- sty/
+  |- tex/
+  |- merge.tex
+  ...
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>.vscode/</code> というディレクトリごとコピーしてペーストしてください。
+このディレクトリが vscode の設定ファイルを配置する場所となります。</p>
+</div>
+<p>設定を反映させるために、一旦 vscode を再起動します。
+改めて会誌のリポジトリを開いてください。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>初めから用意していた <code>settings.json</code> はあくまでテンプレのつもりです。</p>
+<p>再配置した <code>/.vscode/settings.json</code> は <code>.gitignore</code> に指定してあるので、
+カスタムしたい人は自由に編集してください。
+（<code>/ect/</code> の中にある方はそのまま残しておいてください）</p>
+</div>
+<h4 id="_8">タイプセット<a class="headerlink" href="#_8" title="Permanent link">#</a></h4>
+<p>設定ファイルを配置したら、会誌のリポジトリを開いて、
+自分の会誌記事の tex ファイルを選択してタブで開きます。</p>
+<p>左のサイドバーにある「TEX」アイコンをクリックし、
+「Build LaTeX project」から「Recipe: kaishi」をクリックすると、タイプセットが始まります。</p>
+<p><img alt="" src="../img/vscode_typset.png" /></p>
+<p>次からは、<code>cmd + option + B</code> でタイプセットできます（Mac）。
+Windows の場合は <code>ctrl + alt + B</code> です。</p>
+<p>タイプセットが完了したら、<code>cmd + option + V</code> で生成されたPDFを別タブで表示できます（Mac）。
+Windows の場合は <code>ctrl + alt + V</code> です。</p>
+<h2 id="_9">会誌記事の編集・コミット<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
+<h3 id="_10">記事の編集<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
+<p>以上で会誌を書くための初期設定は完了です。</p>
+<p>あとは普通に会誌を書いていき、以下の作業を繰り返すことでその進捗をリポジトリに反映します。</p>
+<p>会誌を書くにあたっては、いくつか注意点がありますが、それは後で述べることにします。</p>
+<p>以下ではまず、ファイルの編集・追加などの変更を Git で管理する方法を説明します。</p>
+<h3 id="commit">変更内容を Commit<a class="headerlink" href="#commit" title="Permanent link">#</a></h3>
+<p>会誌の編集は Git で管理されます。</p>
+<p>ここまでの変更をコミットしてみましょう。</p>
+<p>GitHub Desktop を開くと、変更した部分が表示されています。</p>
+<p><img alt="" src="../img/github_desktop_init.png" /></p>
+<p>左下の入力ボックスに変更内容の説明（コミットメッセージ）を書いて、変更内容をコミットします。
+最初のコミットなので、変更の説明は <code>init</code> とでもしておきましょう。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>変更が単一のファイルのみの場合は、変更の説明にデフォルトで <code>Update &lt;FileName&gt;</code> と入力されています。
+変更の内容は記事の更新ぐらいしかないので、以降はそのコミットメッセージのままコミットするだけでいいです。</p>
+<p>コミットメッセージ入力欄の下の「Discription」には、変更内容の詳細が書けます。
+こちらは任意なので、好きにしてもらったらいいです。</p>
+</div>
+<p>コミットメッセージが書けたら、青色の「Commit to <code>feature-article-&lt;NAME&gt;</code>」ボタンをクリックして、
+自分の作業ブランチ <code>feature-article-&lt;NAME&gt;</code> に変更内容をコミットします。</p>
+<p>まだローカルにしかコミットが反映されていないので、
+ウインドウ上部右にある「Push origin」をクリックしてプッシュします。</p>
+<p><img alt="" src="../img/github_desktop_push.png" /></p>
+<p>これで、リモートの方にも変更が反映されました。</p>
+<p>編集してコミットしてプッシュ、これの繰り返しが会誌記事更新の基本作業となります。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>コミットのタイミングは各自に任せますが、例えば、セクションがひとつ書き終わったとか、一日の作業の終りのタイミングで行ってもらえれば良いかと思います。</p>
+<p>コミットはただのセーブのようなものだと思ってくれても良いです。</p>
+</div>
+<h3 id="fetch_pull">Fetch &amp; Pull<a class="headerlink" href="#fetch_pull" title="Permanent link">#</a></h3>
+<p>別の誰かがコミットしていて、ローカル（自分のPC）のリポジトリより、リモートのリポジトリ（GitHub）の方が新しくなっている場合があります。</p>
+<p>それを確認するためには「Fetch origin」をクリックしてフェッチをします。
+フェッチは自動でも行われますが、たまには自分でも行ってください。</p>
+<p>もし、ローカルよりもリモートのリポジトリの方が新しくなっていた場合、
+「Pull origin」をクリックしてプルを行えば、最新の変更をローカルに反映します。</p>
+<h3 id="_11">派生元ブランチの変更を取り入れる<a class="headerlink" href="#_11" title="Permanent link">#</a></h3>
+<p>派生元の <code>develop</code> ブランチが新しくなっている場合、その変更を自分の作業ブランチへ取り入れる（マージする）ことができます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>この操作は、派生元ブランチへプルリクエストを行う際に自動で行われます。
+手動で行うのは、全体のバグ修正などで管理者からアナウンスがあったときぐらいで十分です。</p>
+<p>とりあえずこの操作のことは気にせず、自分の会誌記事の更新作業に集中してもらえば良いかと思います。</p>
+</div>
+<p>この操作を行うには、まずツールバーの「Branch」から「Merge into Current Branch」を選択するか、
+あるいはキーバインド <code>cmd + shift + M</code> を入力します（Windowsは <code>ctrl + shift + M</code>）。</p>
+<p><img alt="" src="../img/github_desktop_merge_into.png" /></p>
+<p>表示されるポップアップで、派生元である <code>develop</code> ブランチを選択し、
+「Merge develop into <code>feature-article-&lt;NAME&gt;</code>」ボタンを押します。</p>
+<p>競合がなければ、すぐに自動でマージが行われます。</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>競合があるときは、どちらの変更を取り入れるか自分で判断する必要があります。
+もし何か競合してしまったら、管理者に相談してください。</p>
+</div>
+<p>マージがうまくいったら、リモートのブランチにも反映させるためにプッシュをします。</p>
+<h3 id="pull_request">Pull Request<a class="headerlink" href="#pull_request" title="Permanent link">#</a></h3>
+<p>今は自分のブランチ内でしか変更が反映されていないので、
+進捗がある程度キリのいいところまでいったら、
+全体と統合するために 派生元である <code>develop</code> ブランチへプルリクエストを行います。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>develop</code> ブランチとマージするときは、バグや競合がないかをチェックするために、プルリクエストを行います。
+競合のチェックはGitが自動で行ってくれます（競合があった場合の修正は手動で行う）。</p>
+<p>リポジトリの管理者からマージ許可が降りたら、管理者がそのプルリクエストを <code>develop</code> ブランチへマージします。</p>
+</div>
+<p><img alt="" src="../img/github_desktop_pull_request.png" /></p>
+<p>「Create Pull Request」ボタンをクリックするか <code>cmd + R</code> を入力すると、
+ブラウザでプルリクエスト画面が表示されます。</p>
+<p><img alt="" src="../img/github_pull_request.png" /></p>
+<p>「compare:」のところに自分のブランチが、「base:」のところに <code>develop</code> ブランチが表示されるように設定して、
+「Create pull request」ボタンをクリックします。
+任意でコメントを付けることもできます。</p>
+<p>問題がなければ、「Marge pull request」というボタンが表示されますが、
+ここから先は自分1人では行わないでください。</p>
+<p>会誌のリポジトリの管理者が、問題がないかチェックしてからマージを行います。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>誰かがプルリクエストを行ったら、みんなで会誌記事の校正をしてあげましょう。
+プルリクエストのページから、それに対してコメントができるのでうまく利用してください。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>システム的には全員が管理者権限を持っているので、全員の校正が済んだら、適当な誰かがマージを実行すれば良いと思います。
+マージはプルリクエストのページ（GitHub上）で行うことができます。</p>
+</div>
+<h3 id="_12">会誌の編集手順まとめ<a class="headerlink" href="#_12" title="Permanent link">#</a></h3>
+<p>以上で、主に必要なGit操作の説明を一通り行いました。</p>
+<p>会誌記事更新で、繰り返し行う必要がある作業は以下のとおりです；</p>
+<ol>
+<li>fetch &amp; pull でローカルのリポジトリを最新に保つ</li>
+<li>会誌記事を書く</li>
+<li>変更を commit する</li>
+<li>push で変更をリモートに反映</li>
+</ol>
+<p>会誌が完成したら、以下の作業を行います；</p>
+<ol>
+<li>派生元の <code>develop</code> ブランチの最新の変更を自分のブランチへ取り入れる（マージする）</li>
+<li>競合がなければ、自分の作業ブランチを <code>develop</code> ブランチに pull request する</li>
+<li>他の人に構成してもらって、適宜修正する</li>
+</ol>
+<p>管理者によって、無事にプルリクエストがマージされれば完了です。</p>
+<h2 id="_13">会誌記事を書くときの注意点（ルール）<a class="headerlink" href="#_13" title="Permanent link">#</a></h2>
+<p>会誌は好きに書いても良いとは言っても、全員の記事を統合したりする関係でいくつかルールがあります。</p>
+<p>詳しくは<a href="../kaishi02/">次の記事</a>で行うことにして、ここでは最低限必要なことについてだけ、簡単に述べることにします。</p>
+<h3 id="_14">プリアンブル<a class="headerlink" href="#_14" title="Permanent link">#</a></h3>
+<p><code class="highlight"><span class="k">\documentclass</span><span class="nb">{}</span></code> と <code class="highlight"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span></code> の間の領域をプリアンブルと言います。</p>
+<p>プリアンブルに書いた内容は、全員の記事を統合する（<code>merge.tex</code> で読み込む）際には無視されてしまいます。</p>
+<p>パッケージ（sty ファイル）の読み込みや、マクロの定義は、最初に作成した自分の sty ファイルの中に書いてください。</p>
+<p>書き方は、普通にプリアンブルに書くときと同じでいいです。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="c">%% This file is `nakasu.sty`</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>physics<span class="nb">}</span>
+
+<span class="k">\newcomannd\kawaii</span><span class="na">[1]</span><span class="nb">{</span>#1 かわいい<span class="nb">}</span>
+...
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c">%% This file is `nakasu.tex`</span>
+
+<span class="k">\documentclass</span><span class="na">[uplatex,dvipdfmx]</span><span class="nb">{</span>vkaishi<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>vuccaken<span class="nb">}</span>
+<span class="k">\usepakage</span><span class="nb">{</span>nakasu<span class="nb">}</span> <span class="c">% 自分のstyファイル</span>
+
+<span class="c">%% ここに何か書いても、統合する際には無視されてしまう</span>
+<span class="c">%% \usepackage やマクロの定義は自分のstyファイル内で行う</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+...
+</code></pre></div>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>どうしてこんな面倒なことをしなきゃいけないのか疑問に思うかもしれませんが、理由は簡単で、ただ単に kaishi 開発者のプログラミング力が足りなくて実装できなかっただけです。すいません。</p>
+</div>
+<h3 id="_15">会誌のタイトル<a class="headerlink" href="#_15" title="Permanent link">#</a></h3>
+<p><code>\maketitle</code> コマンドで、会誌のタイトルなどを出力します。</p>
+<p>タイトルを <code>\title</code> で、著者名を <code>\author</code> で、
+所属学科と学年を <code>\belong</code> でそれぞれ指定してください。</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="k">\title</span><span class="nb">{</span>無敵級*ビリーバー<span class="nb">}</span> <span class="c">% タイトル</span>
+<span class="k">\author</span><span class="na">[中須]</span><span class="nb">{</span>かすみ<span class="nb">}</span>    <span class="c">% 名前</span>
+<span class="k">\belong</span><span class="nb">{</span>普通科<span class="nb">}{</span>1<span class="nb">}</span>      <span class="c">% 学部学科・回生</span>
+
+<span class="k">\maketitle</span>             <span class="c">% タイトル出力</span>
+</code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>標準で定義されている <code>\maketitle</code> コマンドや <code>\title</code> コマンドを改造（再定義）しています。</p>
+</div>
+<h3 id="_16">目次<a class="headerlink" href="#_16" title="Permanent link">#</a></h3>
+<p>確認用の目次を <code>\mokuji{&lt;depth&gt;}</code> で出力します。</p>
+<p>目次の確認が不要の場合は、コメントアウトしておいてください。</p>
+<h3 id="_17">見出し<a class="headerlink" href="#_17" title="Permanent link">#</a></h3>
+<p>見出しは <code>\section</code> 以下であれば好きに使ってもらってよいです。</p>
+<p>ただし、<code>\chapter</code> は使わないでください。</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>会誌の記事タイトルが、<code>\chapter</code> に相当します。</p>
+</div>
+<h3 id="_18">参考文献<a class="headerlink" href="#_18" title="Permanent link">#</a></h3>
+<p>参考文献は <code>thebibliography</code> 環境で出力します。</p>
+<p>形式はテンプレで示しているものがおそらく正しいので、できるだけその形式を守ってください。</p>
+<h2 id="_19">おわりに<a class="headerlink" href="#_19" title="Permanent link">#</a></h2>
+<p>多分、よくわからないと思います。</p>
+<p>Git とか vscode とかが、何もしてないのに勝手におかしくなったりしたら、
+GitHub の会誌のリポジトリに「<a href="https://github.com/vuccaken/kaishi2020/issues" target="_blank">Issues</a>」というページがあるので、
+そこで質問を投げてください。</p>
+<p>リポジトリの Issues タブにアクセスしたら、「New issue」を押して、
+質問タイトルとその内容を入力して、「Submit new issue」を押せば、質問を投稿できます。</p>
+<p>そうすれば、1営業日以内に、
+上級生が懇切丁寧に問題解決に協力してくれます。</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      最終更新日: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">July 12, 2021 08:12:48</span>
+      
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+  <h2 id="__comments">コメント</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="https://znuko.github.io/nukodocs/tex/kaishi01/",this.page.identifier="tex/kaishi01/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//mkdocs-test-1.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../tutorial04/" class="md-footer__link md-footer__link--prev" aria-label="前: 中級編（QOL向上編）" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              中級編（QOL向上編）
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../kaishi02/" class="md-footer__link md-footer__link--next" aria-label="次: kaishi の解説" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              kaishi の解説
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 znuko
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/nukoyama" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/geniusium_" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+  
+  
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+        <script src="../../assets/js/mathjax3-config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+    
+
+  
+  
+
+  </body>
+</html>
